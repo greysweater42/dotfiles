@@ -33,7 +33,7 @@ let mapleader=","
 " folding
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
+"nnoremap <space> za
 " moving blocks of code - left and right
 vnoremap < <gv
 vnoremap > >gv
