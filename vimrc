@@ -4,6 +4,7 @@ filetype plugin indent on
 set encoding=utf-8
 
 """""" hotkeys
+" write and quit 
 command Q q
 command W w
 command WQ wq
@@ -17,11 +18,6 @@ inoremap <c-d> <Esc>ddi
 " convert the current word to uppercase
 inoremap <c-u> <esc>viwUi
 nnoremap <c-u> viwU
-" moving between panes (splits)
-noremap <C-j> <Esc><C-w>j
-noremap <C-k> <Esc><C-w>k
-noremap <C-l> <Esc><C-W>l
-noremap <C-h> <Esc><C-W>h
 " moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
