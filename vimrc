@@ -67,9 +67,10 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore=['\.pyc$', '\~$']  " ignore .pyc files
 
-" R
+" Nvim-R
 let R_in_buffer = 0
 let R_tmux_split = 1
+au BufRead,BufNewFile *.R nmap <Space> <leader>lj
 
 " vim-airline (powerline)
 let g:airline_powerline_fonts = 1
@@ -87,3 +88,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " python-mode
 let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0  " use YouCompleteMe instead
+
+" gitgutter
+set updatetime=250
+let g:gitgutter_max_signs = 500  " default value
+
