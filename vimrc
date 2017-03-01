@@ -89,3 +89,6 @@ let g:pymode_rope_completion = 0  " use YouCompleteMe instead
 set updatetime=250
 let g:gitgutter_max_signs = 500  " default value
 
+" rainbow (parentheses)
+let g:rainbow_active = 1 
+
