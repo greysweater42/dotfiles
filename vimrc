@@ -57,6 +57,10 @@ set expandtab
 set autoindent
 set fileformat=unix
 
+" completion with ctrl+space
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 " NERDtree 
 map <C-n> :NERDTreeToggle<CR>
 " close NERDtree if it is the only pane opened
