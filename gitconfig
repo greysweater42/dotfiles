@@ -1,0 +1,10 @@
+[user]
+    email = tomis9@buziaczek.pl
+    name = tomek
+
+[alias]
+    l = log --pretty=oneline --abbrev-commit --abbrev=4 -25
+    g = log --pretty=oneline --abbrev-commit --abbrev=4 -25 --graph
+    s = status -sb
+    b = branch
+
