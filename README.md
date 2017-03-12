@@ -1,6 +1,5 @@
-# vim
-my .vim folder
+# dotfiles
+my .dotfiles folder
 
-_vim_ folder also includes my _vimrc_ file, which is softlinked to _.vimrc_ in home directory
-(keeping all vim settings in one file makes version control much easier)
+includes all my files starting with "." from my home directory that are likely to be customised (.vimrc, .vim, .tmux.conf, .bashrc etc.)
 
