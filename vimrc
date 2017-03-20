@@ -71,6 +71,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$']  " ignore .pyc files
 let R_in_buffer = 0
 let R_tmux_split = 1
 au BufRead,BufNewFile *.R nmap <Space> <leader>lj
+au BufRead,BufNewFile *.Rnw nmap <Space> <leader>lj
+au BufRead,BufNewFile *.Rnw nmap <F2> <leader>kp
+au BufRead,BufNewFile *.Rnw nmap <F3> <leader>op
 
 " vim-airline (powerline)
 let g:airline_powerline_fonts = 1
