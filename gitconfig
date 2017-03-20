@@ -8,3 +8,5 @@
     s = status -sb
     b = branch
 
+[core]
+	editor = vim
