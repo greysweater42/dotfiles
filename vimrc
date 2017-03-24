@@ -99,3 +99,6 @@ let g:gitgutter_max_signs = 500  " default value
 " rainbow (parentheses)
 let g:rainbow_active = 1 
 
+" csv
+let g:csv_autocmd_arrange = 1
+
