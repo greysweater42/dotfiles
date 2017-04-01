@@ -91,6 +91,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " python-mode
 let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0  " use YouCompleteMe instead
+map <F5> <Esc><leader>r
 
 " gitgutter
 set updatetime=250
