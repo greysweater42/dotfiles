@@ -41,6 +41,8 @@ vnoremap > >gv
 set nobackup
 set nowritebackup
 set noswapfile
+" 'stamp' - replace a word with yanked text
+nnoremap S diw"0P
 
 """""" view
 set t_Co=256
