@@ -72,10 +72,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$']  " ignore .pyc files
 " Nvim-R
 let R_in_buffer = 0
 let R_tmux_split = 1
-au BufRead,BufNewFile *.R nmap <Space> <leader>lj
-au BufRead,BufNewFile *.Rnw nmap <Space> <leader>lj
+au BufRead,BufNewFile *.R nmap <Space> <leader>l<Enter>
+au BufRead,BufNewFile *.Rnw nmap <Space> <leader>l<Enter>
 au BufRead,BufNewFile *.Rnw nmap <F2> <leader>kp
 au BufRead,BufNewFile *.Rnw nmap <F3> <leader>op
+let R_args_in_stline = 1
 
 " vim-airline (powerline)
 let g:airline_powerline_fonts = 1
@@ -93,7 +94,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " python-mode
 let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0  " use YouCompleteMe instead
-map <F5> <Esc><leader>r
+"map <F5> <Esc><leader>r
+nnoremap <F5> :exec 'w !python3'<cr>
 
 " gitgutter
 set updatetime=250
