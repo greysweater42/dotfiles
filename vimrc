@@ -51,6 +51,7 @@ let g:solarized_termcolors=256
 colorscheme solarized
 let &colorcolumn=81
 set relativenumber             " Show relative line numbers
+set number
 " indentation
 set tabstop=4
 set softtabstop=4
