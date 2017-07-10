@@ -99,6 +99,9 @@ let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0  " use YouCompleteMe instead
 "map <F5> <Esc><leader>r
 nnoremap <F5> :exec 'w !python3'<cr>
+" screen (for python)
+au BufRead,BufNewFile *.py nmap <F2> :ScreenShell ipython<Return>
+au BufRead,BufNewFile *.py nmap <Space> V:ScreenSend<Return>j
 
 " gitgutter
 set updatetime=250
