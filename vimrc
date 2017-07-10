@@ -84,9 +84,11 @@ let g:airline_powerline_fonts = 1
 set laststatus=2  " always show status line
 let g:airline_theme='laederon'
 
-" Latex-Box
-map <F2> <Esc>:w<Enter><leader>ll
+" vim-latex
+map <F2> <Esc>:w<Enter><leader>ll<Return>
 map <F3> <leader>lv
+let g:Tex_ViewRule_pdf = 'zathura'
+let g:Tex_DefaultTargetFormat = 'pdf'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
