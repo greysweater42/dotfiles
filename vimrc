@@ -2,6 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set encoding=utf-8
+set clipboard=unnamedplus
 
 """""" hotkeys
 " write and quit 
@@ -23,7 +24,6 @@ map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 " remap escape to jk and kj
 inoremap jk <Esc>
-inoremap kj <Esc>
 " moving inside lines
 nnoremap j gj
 nnoremap k gk
