@@ -11,9 +11,9 @@ command W w
 command WQ wq
 command Wq wq
 " move line down
-noremap - ddp
+nnoremap - :m .+1<CR>==
 " move line up
-noremap _ :d-1<CR>kP
+nnoremap _ :m .-2<CR>==
 " delete line in insert mode
 inoremap <c-d> <Esc>ddi
 " convert the current word to uppercase
@@ -29,7 +29,7 @@ nnoremap j gj
 nnoremap k gk
 " set leader
 let maplocalleader=","
-let mapleader=","
+let mapleader=";"
 " folding
 set foldmethod=indent
 set foldlevel=99
@@ -73,11 +73,12 @@ let NERDTreeIgnore=['\.pyc$', '\~$']  " ignore .pyc files
 " Nvim-R
 let R_in_buffer = 0
 let R_tmux_split = 1
-au BufRead,BufNewFile *.R nmap <Space> <leader>l<Enter>
-au BufRead,BufNewFile *.Rnw nmap <Space> <leader>l<Enter>
-au BufRead,BufNewFile *.Rnw nmap <F2> <leader>kp
-au BufRead,BufNewFile *.Rnw nmap <F3> <leader>op
+au BufRead,BufNewFile *.R nmap <Space> <LocalLeader>l<Enter>
+au BufRead,BufNewFile *.Rnw nmap <Space> <LocalLeader>l<Enter>
+au BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
+au BufRead,BufNewFile *.Rnw nmap <F3> <LocalLeader>op
 let R_args_in_stline = 1
+au BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
 
 " vim-airline (powerline)
 let g:airline_powerline_fonts = 1
@@ -86,6 +87,7 @@ let g:airline_theme='laederon'
 
 " vim-latex
 map <F2> <Esc>:w<Enter><leader>ll<Return>
+map <F4> <Esc><leader>ll<Return>:<C-U>exec '!biber '.Tex_GetMainFileName(':p:t:r')<CR><leader>ll<Return>
 map <F3> <leader>lv
 let g:Tex_ViewRule_pdf = 'zathura'
 let g:Tex_DefaultTargetFormat = 'pdf'
@@ -113,3 +115,4 @@ let g:rainbow_active = 1
 " csv
 let g:csv_autocmd_arrange = 1
 
+let g:Tex_SmartKeyDot=0
