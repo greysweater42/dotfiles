@@ -1,5 +1,5 @@
 options(scipen=999)
-.libPaths('/home/tomek/.R/x86_64-pc-linux-gnu-library/3.2/')
+.libPaths('/home/tomek/.R/3.4/')
 library(colorout)
 
 r <- getOption("repos")             # hard code the US repo for CRAN
