@@ -50,8 +50,8 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 let &colorcolumn=81
-set relativenumber             " Show relative line numbers
 set number
+autocmd VimEnter * RltvNmbr
 " indentation
 set tabstop=4
 set softtabstop=4
@@ -79,6 +79,7 @@ au BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
 au BufRead,BufNewFile *.Rnw nmap <F3> <LocalLeader>op
 let R_args_in_stline = 1
 au BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
+let g:ycm_semantic_triggers = { 'r' : ['::', '$', '@'] }
 
 " vim-airline (powerline)
 let g:airline_powerline_fonts = 1
