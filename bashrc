@@ -40,3 +40,11 @@ LOCATION=' \033[01;34m\]`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(
 BRANCH=' \033[00;33m\]$(git_branch)\[\033[00m\]\n\$ '
 PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
+
+# java settings for proper Hadoop running
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/java
+export PATH=$PATH:$JAVA_HOME/bin
+
+# hadoop path
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
