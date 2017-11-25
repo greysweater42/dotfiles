@@ -42,6 +42,8 @@ set backspace=indent,eol,start
 " complete with TAB
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><s-tab> pumvisible()? "\<c-p>":"\<c-d>"
+" notes with ctrl+b
+nnoremap <C-b> :vsplit note:org<CR>
 "}}}
 " view {{{
 set t_Co=256
