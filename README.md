@@ -128,3 +128,28 @@ _You may wish to update git configuration file with your own credentials:_
     
     rm .bashrc_backup
 ```
+
+Last but not least, you should update two vim plugins:
+
+- neocomplete.vim
+
+Unfortunately `min_pattern_length` is not supported as a global variable yet. You should update it manually by setting `min_pattern_length = 3` in `s:source` dictionary:
+
+~/.dotfiles/vim/bundle/neocomplete.vim/autoload/neocomplete/sources/omni.vim
+
+(~41st line)
+
+~/.dotfiles/vim/bundle/neocomplete.vim/autoload/neocomplete/sources/member.vim
+
+(~46th line).
+
+- vim-colors-solarized
+
+Vim needs slightly darker colors than the default version suggests. Change `s:base03` and `s:base02` to 233 and 234, respectively, in section `g:solarized_termcolors == 256` in 
+
+`~/.dotfiles/vim/bundle/vim-colors-solarized/colors/solarized.vim`
+
+file.
+
+
+_Both changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
