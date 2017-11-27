@@ -63,11 +63,20 @@ and from R console:
 4. **powerline**
 
 ```
-    sudo apt install python-pip
+    sudo apt-get install python-pip
+    sudo pip install --upgrade pip
     sudo pip install setuptools
     sudo pip install powerline-status
 ```
 
+or
+
+```
+    sudo apt-get install python3-pip
+    sudo pip3 install --upgrade pip
+    sudo pip install setuptools
+    sudo pip install powerline-status
+```
 installing fonts (based on http://powerline.readthedocs.io/en/master/installation/linux.html#fonts-installation)
 
 ```
@@ -81,12 +90,20 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 ```
 
 customizing
+
 ```
-cd /usr/local/lib/python3.5/dist-packages/powerline/config_files/tmux
+cd /usr/local/lib/python2.7/dist-packages/powerline/config_files/themes/tmux
 sudo cp default.json default.json.bak
 ```
 
-replace contents of default.json with
+or
+
+```
+cd /usr/local/lib/python3.5/dist-packages/powerline/config_files/themes/tmux
+sudo cp default.json default.json.bak
+```
+
+replace contents of default.json with (sudo vim)
 ```
 {
     "segments": {                                                     
