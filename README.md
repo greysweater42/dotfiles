@@ -27,7 +27,8 @@ Includes all my files starting with "." from my home directory that are likely t
 ```
 
 - install package colorout 
-You may need these
+
+You may need these libraries:
 
 ```
     sudo apt-get install build-essential
@@ -65,6 +66,56 @@ and from R console:
     sudo apt install python-pip
     sudo pip install setuptools
     sudo pip install powerline-status
+```
+
+installing fonts (based on http://powerline.readthedocs.io/en/master/installation/linux.html#fonts-installation)
+
+```
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mkdir ~/.fonts
+mv PowerlineSymbols.otf ~/.fonts/
+fc-cache -vf ~/.fonts/
+mkdir -p ~/.config/fontconfig/conf.d
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+```
+
+customizing
+```
+cd /usr/local/lib/python3.5/dist-packages/powerline/config_files/tmux
+sudo cp default.json default.json.bak
+```
+
+replace contents of default.json with
+```
+{
+    "segments": {                                                     
+        "right": [
+            {
+                "function": "powerline.segments.common.bat.battery",  
+                "name": "battery", 
+                "args": {
+                    "full_heart": "♥",
+                    "empty_heart": "♥",
+                    "online": "⚡︎ ",
+                    "offline": " "
+                }
+            },
+            {
+                "function": "powerline.segments.common.time.date"
+            },                      
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",                      
+                "args": {                                      
+                    "format": "%H:%M",
+                    "istime": true
+                }
+            }
+        ]
+    } 
+}
+
 ```
 
 5. **vim**
