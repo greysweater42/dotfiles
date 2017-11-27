@@ -12,51 +12,66 @@ Includes all my files starting with "." from my home directory that are likely t
 - installation
 (installation based on https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2)
 
+```
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 
     sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' 
 
     sudo apt-get update
     sudo apt-get install r-base
+```
 
 - create libPath
 
+```
     mkdir -p ~/.R/3.4.2
+```
 
 - install package colorout 
 You may need these
 
+```
     sudo apt-get install build-essential
     sudo apt-get install libcurl4-openssl-dev
     sudo apt-get install libssl-dev
+```
 
 and from R console:
 
+```
     options(repos = "http://cran.us.r-project.org")
     .libPaths("~/.R/3.4.2")
     install.packages('devtools')
     library(devtools)
     install_github('jalvesaq/colorout')
+```
 
 2. **git**
 
+```
     sudo apt-get install git
     git config --global user.email "email@example.com"
     git config --global user.name "tomek"
+```
 
 3. **tmux**
 
+```
     sudo apt-get install tmux
+```
 
 4. **powerline**
 
+```
     sudo apt install python-pip
     sudo pip install setuptools
     sudo pip install powerline-status
+```
 
 5. **vim**
 
 (installation based on https://gist.github.com/odiumediae/3b22d09b62e9acb7788baf6fdbb77cf8)
 
+```
     sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
     sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
     sudo rm -rf /usr/local/share/vim /usr/bin/vim
@@ -85,9 +100,11 @@ and from R console:
     make && sudo make install
     cd
     rm -r vim
+```
 
 ### dotfiles installation
 
+```
     git clone https://github.com/tomis9/dotfiles ~/.dotfiles
     cp .bashrc .bachrc_backup
     ln -sf ~/.dotfiles/bashrc ~/.bashrc
@@ -96,9 +113,12 @@ and from R console:
     ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
     ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
     ln -sf ~/.dotfiles/vim ~/.vim
+```
 
 
 _You may wish to update git configuration file with your own credentials:_
+
+```
     git config --global user.email "email@example.com"
     git config --global user.name "me"
 
@@ -107,3 +127,4 @@ _You may wish to update git configuration file with your own credentials:_
     git submodule update
     
     rm .bashrc_backup
+```
