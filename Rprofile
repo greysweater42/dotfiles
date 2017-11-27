@@ -1,11 +1,14 @@
 options(scipen=999)
-.libPaths('/home/tomek/.R/3.4/')
+
+.libPaths("~/.R/3.4.2")
+
 library(colorout)
 
-r <- getOption("repos")  # hard code the US repo for CRAN
-r["CRAN"] <- "http://cran.us.r-project.org"
-options(repos = r)
-rm(r)
+local({
+  r = getOption("repos")             
+  r["CRAN"] <- "http://cran.us.r-project.org"
+  options(repos = r)
+})
 
 # from the AER book by Zeileis and Kleiber
 options(prompt="R> ", digits=4, show.signif.stars=FALSE)
