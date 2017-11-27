@@ -7,13 +7,14 @@ Includes all my files starting with "." from my home directory that are likely t
 
 ### prerequisites
 
-* **R** 
+1. **R** 
 
 - installation
 (installation based on https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-16-04-2)
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 
     sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/' 
+
     sudo apt-get update
     sudo apt-get install r-base
 
@@ -36,23 +37,23 @@ and from R console:
     library(devtools)
     install_github('jalvesaq/colorout')
 
-* **git**
+2. **git**
 
     sudo apt-get install git
     git config --global user.email "email@example.com"
     git config --global user.name "tomek"
 
-* **tmux**
+3. **tmux**
 
     sudo apt-get install tmux
 
-* **powerline**
+4. **powerline**
 
     sudo apt install python-pip
     sudo pip install setuptools
     sudo pip install powerline-status
 
-* **vim**
+5. **vim**
 
 (installation based on https://gist.github.com/odiumediae/3b22d09b62e9acb7788baf6fdbb77cf8)
 
