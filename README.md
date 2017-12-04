@@ -139,6 +139,15 @@ replace contents of default.json with (sudo vim)
 
 (installation based on https://gist.github.com/odiumediae/3b22d09b62e9acb7788baf6fdbb77cf8)
 
+_Before you start, you probably need to install a few dependencies:_
+
+```
+sudo apt-get install python-dev
+sudo apt-get install python3-setuptools
+```
+
+_and thn run_
+
 ```
     sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
     sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
