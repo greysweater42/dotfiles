@@ -247,4 +247,21 @@ brew unlink openssl && brew link openssl --force
 brew install vim --with-cscope --with-python --with-lua --override-system-vim
 
 
+## Adding a submodule to a git repository
+
+(example)
+```
+git submodule add https://github.com/vim-scripts/dbext.vim ./vim/bundle/dbext.vim
+```
+
+Don't forget to add `ignore = dirty` flag to .gitmodules file.
+
+
+## Remove a submodule from a git repository
+
+1. git submodule deinit -f -- a/submodule    
+2. rm -rf .git/modules/a/submodule
+3. git rm -f a/submodule
+
+(based on https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)
 
