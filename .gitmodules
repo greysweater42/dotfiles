@@ -66,3 +66,7 @@
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
     ignore = dirty
+[submodule "vim/bundle/dbext.vim"]
+	path = vim/bundle/dbext.vim
+	url = https://github.com/vim-scripts/dbext.vim
+    ignore = dirty

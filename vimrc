@@ -197,5 +197,12 @@ endfunction"}}}
 
 " undotree
 noremap <c-z> :UndotreeToggle<CR>
+
+" dbext.vim 
+let g:dbext_default_user = 'tomek'
+let g:dbext_default_passwd = 'haslo'
+let g:dbext_default_host = 'localhost'
+let g:dbext_default_dbname = 'MIS'
+let g:dbext_default_type = 'MYSQL'
 " }}}
 
