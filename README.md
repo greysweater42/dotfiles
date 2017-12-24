@@ -5,7 +5,7 @@ Includes all my files starting with "." from my home directory that are likely t
 
 ## Installation
 
-### prerequisites
+### Installation with sudo privileges
 
 1. **R** 
 
@@ -50,8 +50,6 @@ and from R console:
 
 ```
     sudo apt-get install git
-    git config --global user.email "email@example.com"
-    git config --global user.name "tomek"
 ```
 
 3. **tmux**
@@ -221,3 +219,23 @@ file.
 
 
 _Both changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
+
+
+### Installation without sudo privileges
+*fingers crossed, you'll need it*
+
+I highly recommend using Linuxbrew for local installations of your favourite software. More info at http://linuxbrew.sh/.
+
+*not tested yet, may be not working*
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
+echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
+
+brew unlink openssl && brew link openssl --force
+brew install vim --with-cscope --with-python --with-lua --override-system-vim
+
+
+
