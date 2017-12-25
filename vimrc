@@ -205,5 +205,9 @@ let g:dbext_default_passwd = readfile(file_path)[1]
 let g:dbext_default_host = readfile(file_path)[2]
 let g:dbext_default_dbname = readfile(file_path)[3]
 let g:dbext_default_type = readfile(file_path)[4]
+
+autocmd BufRead,BufNewFile *.sql nmap <space> <leader>sel
+autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
+
 " }}}
 
