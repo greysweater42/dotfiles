@@ -199,10 +199,11 @@ endfunction"}}}
 noremap <c-z> :UndotreeToggle<CR>
 
 " dbext.vim 
-let g:dbext_default_user = 'tomek'
-let g:dbext_default_passwd = 'haslo'
-let g:dbext_default_host = 'localhost'
-let g:dbext_default_dbname = 'MIS'
-let g:dbext_default_type = 'MYSQL'
+let file_path = $HOME . "/pass/pass.txt"
+let g:dbext_default_user = readfile(file_path)[0]
+let g:dbext_default_passwd = readfile(file_path)[1]
+let g:dbext_default_host = readfile(file_path)[2]
+let g:dbext_default_dbname = readfile(file_path)[3]
+let g:dbext_default_type = readfile(file_path)[4]
 " }}}
 
