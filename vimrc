@@ -44,6 +44,21 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><s-tab> pumvisible()? "\<c-p>":"\<c-d>"
 " notes with ctrl+b
 nnoremap <C-b> :vsplit note:org<CR>
+" quickly list buffers 
+nnoremap <leader>l :ls<CR>:b<space>
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+" To open a new empty buffer
+nmap <leader>T :enew<cr>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
 "}}}
 " view {{{
 set t_Co=256
@@ -113,6 +128,10 @@ augroup filetype_R
     autocmd FileType r setlocal foldmethod=expr
     autocmd FileType r setlocal foldexpr=RFolds()
     autocmd FileType r setlocal softtabstop=0 expandtab shiftwidth=2 smarttab
+    " tags
+    autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
+    autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
+
 augroup END
 " }}}
 " latex settings - vim-latex {{{
@@ -199,7 +218,7 @@ endfunction"}}}
 noremap <c-z> :UndotreeToggle<CR>
 
 " dbext.vim 
-let file_path = $HOME . "/pass/pass.txt"
+let file_path = $HOME . "/pass/pass_anr.txt"
 let g:dbext_default_user = readfile(file_path)[0]
 let g:dbext_default_passwd = readfile(file_path)[1]
 let g:dbext_default_host = readfile(file_path)[2]
@@ -208,6 +227,10 @@ let g:dbext_default_type = readfile(file_path)[4]
 
 autocmd BufRead,BufNewFile *.sql nmap <space> <leader>sel
 autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
+autocmd BufRead,BufNewFile *.sql nmap <localleader>c viW<leader>sdt
+
+
+" indentLine
+let g:indentLine_color_term = 235
 
 " }}}
-
