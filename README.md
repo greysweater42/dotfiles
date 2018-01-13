@@ -234,8 +234,76 @@ Here's what you should to to avoid this sort of behaviour: go to ~/.dotfiles/vim
 
 
 
-_Both changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
+_These changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
 
+### R tags
+
+Some information about tags you may find on
+
+https://developer.r-project.org/rtags.html
+
+https://stat.ethz.ch/R-manual/R-devel/library/utils/html/rtags.html
+
+and obviously in :h Nvim-R.
+
+Here's what you have to do in order to make tags for R programming language work in vim:
+
+mkdir -p ~/.R/source
+cd ~/.R/source
+
+wget https://cran.r-project.org/src/base/R-3/R-3.4.3.tar.gz
+\# or a newer version that you find on https://cran.r-project.org/sources.html
+
+tar -xvzf R-3.4.3.tar.gz 
+rm R-3.4.3.tar.gz 
+
+cd ~/.cache/Nvim-R/
+
+in R console:
+
+rtags(path = "~/.R/source", recursive = TRUE, ofile = "RTAGS")
+nvimcom::etags2ctags("RTAGS", "Rtags")
+
+and back in bash:
+sudo apt install ctags
+ctags --languages=C,Fortran,Java,Tcl -R -f RsrcTags ~/.R/source/
+
+So far so good. Now you should be able to <C-]> functions like mapply or do_mapply.
+
+And now the second part:
+
+l <- rownames(installed.packages())
+x <- c()
+for (i in l) {
+  tryCatch({
+      download.packages(i, destdir = '~/.R/source')
+    },
+    warning = function(w) x <<- c(.GlobalEnv$x, w$message)
+  )
+}
+x
+
+which downloads all your installed packages into ~/.R/source. 
+
+x contains names of the packages that were not downloaded because they are not from cran, but probably from github. You can clone them individually. 
+
+
+cd ~/.R/source
+cat \*.tar.gz | tar -xzvf - -i
+rm \*.tar.gz 
+find . -name tests -type d -exec rm -r {} +
+
+cd ~/.cache/Nvim-R
+R
+rtags(path = "~/.R/source", recursive = TRUE, ofile = "RTAGS")
+nvimcom::etags2ctags("RTAGS", "Rtags")
+q()
+ctags --languages=C,Fortran,Java,Tcl -R -f RsrcTags ~/.R/source/
+
+There are still some hm "problems":
+
+- only files from R/ directories should be loaded (removing tests folders is not that elegant)
+- only functions from currently loaded libraries should be available
 
 ### Installation without sudo privileges
 *fingers crossed, you'll need it*

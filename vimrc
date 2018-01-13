@@ -55,7 +55,7 @@ nmap <leader>l :bnext<CR>
 " Move to the previous buffer
 nmap <leader>h :bprevious<CR>
 " Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>q :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
@@ -129,8 +129,10 @@ augroup filetype_R
     autocmd FileType r setlocal foldexpr=RFolds()
     autocmd FileType r setlocal softtabstop=0 expandtab shiftwidth=2 smarttab
     " tags
-    autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
-    autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
+    if filereadable("~/.cache/Nvim-R/RTAGS")
+        autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
+        autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
+    endif
 
 augroup END
 " }}}
@@ -236,3 +238,4 @@ autocmd BufRead,BufNewFile *.sql nmap <localleader>c viW<leader>sdt
 let g:indentLine_color_term = 235
 
 " }}}
+
