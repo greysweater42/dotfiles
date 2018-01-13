@@ -218,12 +218,14 @@ endfunction"}}}
 noremap <c-z> :UndotreeToggle<CR>
 
 " dbext.vim 
-let file_path = $HOME . "/pass/pass_anr.txt"
-let g:dbext_default_user = readfile(file_path)[0]
-let g:dbext_default_passwd = readfile(file_path)[1]
-let g:dbext_default_host = readfile(file_path)[2]
-let g:dbext_default_dbname = readfile(file_path)[3]
-let g:dbext_default_type = readfile(file_path)[4]
+if $USER == "dyrkat"
+    let file_path = $HOME . "/pass/pass_anr.txt"
+    let g:dbext_default_user = readfile(file_path)[0]
+    let g:dbext_default_passwd = readfile(file_path)[1]
+    let g:dbext_default_host = readfile(file_path)[2]
+    let g:dbext_default_dbname = readfile(file_path)[3]
+    let g:dbext_default_type = readfile(file_path)[4]
+endif
 
 autocmd BufRead,BufNewFile *.sql nmap <space> <leader>sel
 autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
