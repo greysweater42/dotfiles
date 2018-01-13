@@ -204,7 +204,7 @@ _You may wish to update git configuration file with your own credentials:_
     rm .bashrc_backup
 ```
 
-Last but not least, you should update two vim plugins:
+Last but not least, you should update three vim plugins:
 
 - neocomplete.vim
 
@@ -225,6 +225,13 @@ Vim needs slightly darker colors than the default version suggests. Change `s:ba
 `~/.dotfiles/vim/bundle/vim-colors-solarized/colors/solarized.vim`
 
 file.
+
+- vim-gitgutter
+
+When you start using buffers (as a more convenient method for using multiple files than tabs) you quickly find out there's a missing shortcut for switching between buffers, an equivalent to gt and gT. <leader>h and <leader>l seem to be the best candidates, however vim-gitgutter has already used <leader>hp (etc.) for it's own purposes and while using <leader>h you have to wait for unpleasantly long until vim realizes you don't want to strike any more keys. 
+
+Here's what you should to to avoid this sort of behaviour: go to ~/.dotfiles/vim/bundle/vim-gitgutter/plugin/, ```vim gitgutter.vim``` and search for <Leader>h. Comment out all teh lines where this phrase appears.
+
 
 
 _Both changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
