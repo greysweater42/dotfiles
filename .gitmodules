@@ -75,3 +75,9 @@
 	path = vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
     ignore = dirty
+[submodule "vim/bundle/vim-bufferline"]
+	path = vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
+[submodule "vim/bundle/vim-ctrlspace"]
+	path = vim/bundle/vim-ctrlspace
+	url = https://github.com/vim-ctrlspace/vim-ctrlspace
