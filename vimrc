@@ -87,7 +87,9 @@ set fileformat=unix
 " completion with ctrl+space
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
-
+" highlighting TODO
+highlight MyGroup ctermbg=21 guibg=green
+match MyGroup /TODO/
 " }}}
 " R settings - Nvim-R {{{
 " Nvim-R
@@ -117,9 +119,9 @@ augroup filetype_R
     " folds
     function! RFolds()
         let thisline = getline(v:lnum)
-        if match(thisline, "# ----") >= 0
+        if match(thisline, "# .\\+ ----") >= 0
             return ">1"
-        elseif match(thisline, "## ---") >= 0
+        elseif match(thisline, "## .\\+ ---") >= 0
             return ">2"
         else 
             return "="
