@@ -131,10 +131,10 @@ augroup filetype_R
     autocmd FileType r setlocal foldexpr=RFolds()
     autocmd FileType r setlocal softtabstop=0 expandtab shiftwidth=2 smarttab
     " tags
-    if filereadable("~/.cache/Nvim-R/RTAGS")
+    " if filereadable("~/.cache/Nvim-R/RTAGS")
         autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
         autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
-    endif
+    " endif
 
 augroup END
 " }}}
@@ -207,7 +207,7 @@ let g:neocomplete#enable_fuzzy_completion = 0
 let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#manual_completion_start_length = 4
 inoremap <expr><Tab>  neocomplete#start_manual_complete()
-let g:neocomplete#auto_complete_delay = 400
+let g:neocomplete#auto_complete_delay = 50
 autocmd! FileType python setlocal omnifunc=pythoncomplete#Complete
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
@@ -235,6 +235,8 @@ autocmd BufRead,BufNewFile *.sql nmap <space> <leader>sel
 autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
 autocmd BufRead,BufNewFile *.sql nmap <localleader>c viW<leader>sdt
 
+" vim-fugitive
+noremap <C-g> :Gstatus<CR>
 
 " indentLine
 let g:indentLine_color_term = 235
