@@ -1,57 +1,57 @@
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim/pack/my-plugins/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "vim/bundle/csv.vim"]
-	path = vim/bundle/csv.vim
+	path = vim/pack/my-plugins/start/csv.vim
 	url = https://github.com/chrisbra/csv.vim
 [submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+	path = vim/pack/my-plugins/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
+	path = vim/pack/my-plugins/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/Nvim-R"]
-	path = vim/bundle/Nvim-R
+	path = vim/pack/my-plugins/start/Nvim-R
 	url = https://github.com/jalvesaq/Nvim-R
 [submodule "vim/bundle/rainbow"]
-	path = vim/bundle/rainbow
+	path = vim/pack/my-plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow
 [submodule "vim/bundle/screen"]
-	path = vim/bundle/screen
+	path = vim/pack/my-plugins/start/screen
 	url = https://github.com/ervandew/screen
 [submodule "vim/bundle/undotree"]
-	path = vim/bundle/undotree
+	path = vim/pack/my-plugins/start/undotree
 	url = https://github.com/mbbill/undotree
 [submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim/pack/my-plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
+	path = vim/pack/my-plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+	path = vim/pack/my-plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+	path = vim/pack/my-plugins/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
     ignore = dirty
 [submodule "vim/bundle/vim-latex"]
-	path = vim/bundle/vim-latex
+	path = vim/pack/my-plugins/start/vim-latex
 	url = https://github.com/vim-latex/vim-latex
 [submodule "vim/bundle/vim-misc"]
-	path = vim/bundle/vim-misc
+	path = vim/pack/my-plugins/start/vim-misc
 	url = https://github.com/xolox/vim-misc
 [submodule "vim/bundle/vim-notes"]
-	path = vim/bundle/vim-notes
+	path = vim/pack/my-plugins/start/vim-notes
 	url = https://github.com/xolox/vim-notes
 [submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
+	path = vim/pack/my-plugins/start/vim-surround
 	url = https://github.com/tpope/vim-surround
 [submodule "vim/bundle/vim-tmux-navigator"]
-	path = vim/bundle/vim-tmux-navigator
+	path = vim/pack/my-plugins/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "vim/bundle/vim-unimpaired"]
-	path = vim/bundle/vim-unimpaired
+	path = vim/pack/my-plugins/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
@@ -60,24 +60,24 @@
 	path = tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
 [submodule "vim/bundle/neocomplete.vim"]
-	path = vim/bundle/neocomplete.vim
+	path = vim/pack/my-plugins/start/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
     ignore = dirty
 [submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
+	path = vim/pack/my-plugins/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
     ignore = dirty
 [submodule "vim/bundle/dbext.vim"]
-	path = vim/bundle/dbext.vim
+	path = vim/pack/my-plugins/start/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim
     ignore = dirty
 [submodule "vim/bundle/indentLine"]
-	path = vim/bundle/indentLine
+	path = vim/pack/my-plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine
     ignore = dirty
 [submodule "vim/bundle/vim-ctrlspace"]
-	path = vim/bundle/vim-ctrlspace
+	path = vim/pack/my-plugins/start/vim-ctrlspace
 	url = https://github.com/vim-ctrlspace/vim-ctrlspace
 [submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
+	path = vim/pack/my-plugins/start/ale
 	url = https://github.com/w0rp/ale

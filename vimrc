@@ -1,7 +1,5 @@
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
-Helptags
 set encoding=utf-8
 set clipboard=unnamedplus
 
