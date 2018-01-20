@@ -236,7 +236,7 @@ autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
 autocmd BufRead,BufNewFile *.sql nmap <localleader>c viW<leader>sdt
 
 " vim-fugitive
-noremap <C-g> :Gstatus<CR>
+noremap <C-g> :Gstatus<CR><C-w>20+
 
 " indentLine
 let g:indentLine_color_term = 235
