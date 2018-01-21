@@ -95,6 +95,7 @@ let R_in_buffer = 0
 let R_tmux_split = 1
 let R_args_in_stline = 1
 let R_close_term = 1
+let R_assign = 0
 augroup filetype_R
     autocmd!
     autocmd BufRead,BufNewFile *.[Rr] nmap <Space> <LocalLeader>l<Enter>
