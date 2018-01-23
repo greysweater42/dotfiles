@@ -1,6 +1,10 @@
 options(scipen=999)
 
-.libPaths("~/.R/3.4.2")
+if (Sys.info()[["user"]] == "dyrkat") {
+  .libPaths("~/.R/3.4.3")
+} else {
+  .libPaths("~/.R/3.4.2")
+}
 
 library(colorout)
 
