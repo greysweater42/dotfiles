@@ -98,11 +98,11 @@ let R_close_term = 1
 let R_assign = 0
 augroup filetype_R
     autocmd!
-    autocmd BufRead,BufNewFile *.[Rr] nmap <Space> <LocalLeader>l<Enter>
-    autocmd BufRead,BufNewFile *.[Rr] nmap <F2> <LocalLeader>rf
-    autocmd BufRead,BufNewFile *.[Rr] nmap <LocalLeader>h <LocalLeader>rh
-    autocmd BufRead,BufNewFile *.[Rr] nmap <LocalLeader>v <LocalLeader>rv
-    autocmd BufRead,BufNewFile *.[Rr] nmap <F5> <LocalLeader>aa
+    autocmd FileType r nmap <buffer> <Space> <LocalLeader>l<Enter>
+    autocmd FileType r nmap <buffer> <F2> <LocalLeader>rf
+    autocmd FileType r nmap <buffer> <LocalLeader>h <LocalLeader>rh
+    autocmd FileType r nmap <buffer> <LocalLeader>v <LocalLeader>rv
+    autocmd FileType r nmap <buffer> <F5> <LocalLeader>aa
     autocmd BufRead,BufNewFile *.Rnw nmap <Space> <LocalLeader>l<Enter>
     autocmd BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
     autocmd BufRead,BufNewFile *.Rnw nmap <F3> <LocalLeader>op
@@ -159,6 +159,22 @@ augroup filetype_python
     autocmd BufRead,BufNewFile *.py nmap <F2> :ScreenShell python3<Return>
     autocmd BufRead,BufNewFile *.py nmap <Space> V:ScreenSend<CR>j
 augroup END
+" }}}
+" sql settings - dbext.vim {{{
+if $USER == "dyrkat"
+    let file_path = $HOME . "/pass/pass_anr.txt"
+else
+    let file_path = $HOME . "/pass/pass.txt"
+endif
+let g:dbext_default_user = readfile(file_path)[0]
+let g:dbext_default_passwd = readfile(file_path)[1]
+let g:dbext_default_host = readfile(file_path)[2]
+let g:dbext_default_dbname = readfile(file_path)[3]
+let g:dbext_default_type = readfile(file_path)[4]
+
+autocmd FileType sql nmap <buffer> <space> <leader>sel
+autocmd FileType sql vmap <buffer> <space> <leader>se
+autocmd FileType sql nmap <buffer> <localleader>c viW<leader>sdt
 " }}}
 " vimscript settings ------------------{{{
 augroup filetype_vim
@@ -219,22 +235,6 @@ endfunction"}}}
 
 " undotree
 noremap <c-z> :UndotreeToggle<CR>
-
-" dbext.vim 
-if $USER == "dyrkat"
-    let file_path = $HOME . "/pass/pass_anr.txt"
-else
-    let file_path = $HOME . "/pass/pass.txt"
-endif
-let g:dbext_default_user = readfile(file_path)[0]
-let g:dbext_default_passwd = readfile(file_path)[1]
-let g:dbext_default_host = readfile(file_path)[2]
-let g:dbext_default_dbname = readfile(file_path)[3]
-let g:dbext_default_type = readfile(file_path)[4]
-
-autocmd BufRead,BufNewFile *.sql nmap <space> <leader>sel
-autocmd BufRead,BufNewFile *.sql vmap <space> <leader>se
-autocmd BufRead,BufNewFile *.sql nmap <localleader>c viW<leader>sdt
 
 " vim-fugitive
 noremap <C-g> :Gstatus<CR><C-w>20+
