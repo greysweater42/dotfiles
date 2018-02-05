@@ -2,6 +2,7 @@ options(scipen=999)
 
 if (Sys.info()[["user"]] == "dyrkat") {
   .libPaths("~/.R/3.4.3")
+  library(shiny)
 } else {
   .libPaths("~/.R/3.4.2")
 }
