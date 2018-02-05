@@ -104,9 +104,13 @@ augroup filetype_R
     autocmd FileType r nmap <buffer> <LocalLeader>v <LocalLeader>rv
     autocmd FileType r nmap <buffer> <F5> <LocalLeader>aa
     autocmd BufRead,BufNewFile *.Rnw nmap <Space> <LocalLeader>l<Enter>
+    autocmd BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
     autocmd BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
     autocmd BufRead,BufNewFile *.Rnw nmap <F3> <LocalLeader>op
-    autocmd BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
+    autocmd BufRead,BufNewFile *.Rmd nmap <Space> <LocalLeader>l<Enter>
+    autocmd BufRead,BufNewFile *.Rmd nmap <F2> <LocalLeader>rf
+    autocmd BufRead,BufNewFile *.Rmd nmap <F5> <LocalLeader>kh
+    let R_openhtml = 1
     " abbreviations
     function! Eatchar(pat)
         let c = nr2char(getchar(0))
