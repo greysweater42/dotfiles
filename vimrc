@@ -246,5 +246,10 @@ noremap <C-g> :Gstatus<CR><C-w>20+
 " indentLine
 let g:indentLine_color_term = 235
 
+" vim-localvimrc
+let g:localvimrc_file_directory_only = 1
+let g:localvimrc_whitelist = '/home/tomek/nauka/R/build/.lvimrc'
+let g:localvimrc_sandbox = 0
+
 " }}}
 

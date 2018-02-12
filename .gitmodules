@@ -81,3 +81,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/pack/my-plugins/start/ale
 	url = https://github.com/w0rp/ale
+[submodule "vim/pack/my-plugins/start/vim-localvimrc"]
+	path = vim/pack/my-plugins/start/vim-localvimrc
+	url = https://github.com/embear/vim-localvimrc
