@@ -13,6 +13,7 @@
 [submodule "vim/bundle/Nvim-R"]
 	path = vim/pack/my-plugins/start/Nvim-R
 	url = https://github.com/jalvesaq/Nvim-R
+    ignore = dirty
 [submodule "vim/bundle/rainbow"]
 	path = vim/pack/my-plugins/start/rainbow
 	url = https://github.com/luochen1990/rainbow
