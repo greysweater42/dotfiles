@@ -162,8 +162,9 @@ augroup filetype_python
     let g:pymode_folding = 0
     let g:python_syntax_all = 1
     " screen (for python)
-    autocmd BufRead,BufNewFile *.py nmap <F2> :ScreenShell python3<Return>
-    autocmd BufRead,BufNewFile *.py nmap <Space> V:ScreenSend<CR>j
+    autocmd FileType python nmap <F2> :ScreenShell python3<Return>
+    autocmd FileType python nmap <F3> :Codi python<Return>
+    autocmd FileType python nmap <Space> V:ScreenSend<CR>j
 augroup END
 " }}}
 " sql settings - dbext.vim {{{
