@@ -215,6 +215,7 @@ let g:csv_autocmd_arrange = 1
 autocmd BufRead,BufNewFile *.csv nnoremap <LocalLeader>a <Esc>ggVG:ArrangeColumn<CR>
 
 " neocomplete.vim
+autocmd FileType python NeoCompleteLock
 let g:neocomplete#enable_at_startup = 1 
 let g:neocomplete#sources#omni#functions = {'r': 'CompleteR'}
 let g:neocomplete#sources#omni#input_patterns = {'r': '[[:alnum:].\\]\+'}

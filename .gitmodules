@@ -85,3 +85,9 @@
 [submodule "vim/pack/my-plugins/start/vim-localvimrc"]
 	path = vim/pack/my-plugins/start/vim-localvimrc
 	url = https://github.com/embear/vim-localvimrc
+[submodule "vim/pack/my-plugins/start/vim-hug-neovim-rpc"]
+	path = vim/pack/my-plugins/start/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "vim/pack/my-plugins/start/nvim-completion-manager"]
+	path = vim/pack/my-plugins/start/nvim-completion-manager
+	url = https://github.com/roxma/nvim-completion-manager
