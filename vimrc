@@ -154,11 +154,13 @@ augroup filetype_tex
     autocmd BufRead,BufNewFile *.tex map <F3> <leader>lv
 augroup END
 " }}}
-" python settings - python-mode {{{
+" python settings {{{
 augroup filetype_python
     autocmd!
-    "map <F5> <Esc><leader>r
-    autocmd BufRead,BufNewFile *.py nmap <F5> :exec 'w !python3'<cr>
+    " python-mode
+    autocmd FileType python nmap <F5> <Esc><leader>r
+    let g:pymode_folding = 0
+    let g:python_syntax_all = 1
     " screen (for python)
     autocmd BufRead,BufNewFile *.py nmap <F2> :ScreenShell python3<Return>
     autocmd BufRead,BufNewFile *.py nmap <Space> V:ScreenSend<CR>j
@@ -253,4 +255,3 @@ let g:localvimrc_whitelist = '/home/tomek/nauka/R/build/.lvimrc'
 let g:localvimrc_sandbox = 0
 
 " }}}
-
