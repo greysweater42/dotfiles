@@ -164,7 +164,20 @@ augroup filetype_python
     " screen (for python)
     autocmd FileType python nmap <F2> :ScreenShell python3<Return>
     autocmd FileType python nmap <F3> :Codi python<Return>
-    autocmd FileType python nmap <Space> V:ScreenSend<CR>j
+
+    function! PythonSend()
+        if getline('.') == "" && getline(line('.') + 1) == ""
+            SlimuxREPLSendLine
+            exec "normal! j"
+        endif
+        if getline('.') == ""
+            exec "normal! j"
+        else
+            SlimuxREPLSendLine
+            exec "normal! j"
+        endif
+    endfunc
+    autocmd FileType python nmap <space> :call PythonSend()<CR>
 augroup END
 " }}}
 " sql settings - dbext.vim {{{

@@ -94,6 +94,10 @@
 [submodule "vim/pack/my-plugins/start/python-mode"]
 	path = vim/pack/my-plugins/start/python-mode
 	url = https://github.com/python-mode/python-mode
+    ignore = dirty
 [submodule "vim/pack/my-plugins/start/codi.vim"]
 	path = vim/pack/my-plugins/start/codi.vim
 	url = https://github.com/metakirby5/codi.vim
+[submodule "vim/pack/my-plugins/start/slimux"]
+	path = vim/pack/my-plugins/start/slimux
+	url = https://github.com/epeli/slimux
