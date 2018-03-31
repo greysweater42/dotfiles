@@ -157,6 +157,8 @@ augroup END
 " python settings {{{
 augroup filetype_python
     autocmd!
+    " ale
+    let g:ale_python_pylint_executable = 'python3'
     " python-mode
     autocmd FileType python nmap <F5> <Esc><leader>r
     let g:pymode_folding = 0
