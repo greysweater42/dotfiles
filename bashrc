@@ -48,3 +48,9 @@ export PATH=$PATH:$JAVA_HOME/bin
 # hadoop path
 export HADOOP_HOME=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
+
+if [ "$(whoami)" == "tomek" ]; then
+    alias python3.3=/opt/python3.3/bin/python3.3
+    alias sudo='sudo '
+    alias django-admin.py=/opt/python3.3/bin/django-admin.py
+fi
