@@ -98,9 +98,6 @@
 [submodule "vim/pack/my-plugins/start/slimux"]
 	path = vim/pack/my-plugins/start/slimux
 	url = https://github.com/epeli/slimux
-[submodule "vim/pack/my-plugins/start/nvim-completion-manager"]
-	path = vim/pack/my-plugins/start/nvim-completion-manager
-	url = https://github.com/JR4er/nvim-completion-manager
 [submodule "vim/pack/my-plugins/start/vim-instant-markdown"]
 	path = vim/pack/my-plugins/start/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown
