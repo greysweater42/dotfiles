@@ -104,3 +104,6 @@
 [submodule "vim/pack/my-plugins/start/nvim-completion-manager"]
 	path = vim/pack/my-plugins/start/nvim-completion-manager
 	url = https://github.com/roxma/nvim-completion-manager
+[submodule "vim/pack/my-plugins/start/vim-startify"]
+	path = vim/pack/my-plugins/start/vim-startify
+	url = https://github.com/mhinz/vim-startify
