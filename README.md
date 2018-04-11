@@ -232,6 +232,14 @@ When you start using buffers (as a more convenient method for using multiple fil
 
 Here's what you should to to avoid this sort of behaviour: go to ~/.dotfiles/vim/bundle/vim-gitgutter/plugin/, ```vim gitgutter.vim``` and search for <Leader>h. Comment out all teh lines where this phrase appears.
 
+- ale
+
+A small change in .dotfiles/vim/pack/my-plugins/start/ale/ale_linters/r will suppress useless errors in style of R language.
+
+```
+let g:ale_r_lintr_options = get(g:, 'ale_r_lintr_options', 'with_defaults(absolute_paths_linter = NULL, camel_case_linter = NULL)')
+```
+
 
 
 _These changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
@@ -339,4 +347,5 @@ Don't forget to add `ignore = dirty` flag to .gitmodules file.
 3. git rm -f a/submodule
 
 (based on https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule)
+
 
