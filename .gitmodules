@@ -99,6 +99,7 @@
 [submodule "vim/pack/my-plugins/start/slimux"]
 	path = vim/pack/my-plugins/start/slimux
 	url = https://github.com/epeli/slimux
+    ignore = dirty
 [submodule "vim/pack/my-plugins/start/vim-instant-markdown"]
 	path = vim/pack/my-plugins/start/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown

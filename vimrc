@@ -164,30 +164,26 @@ augroup filetype_python
     let g:pymode_folding = 0
     let g:python_syntax_all = 1
     " screen (for python)
-    autocmd FileType python nmap <F2> :ScreenShell ipython3<Return>
+    let g:slimux_select_from_current_window = 1
+    function! SetupSlimux()
+        ScreenShell ipython3
+        SlimuxGlobalConfigure
+    endfunc
+    autocmd FileType python nmap <F2> :call SetupSlimux()<CR>
     autocmd FileType python nmap <F3> :Codi python<Return>
 
-    function! DeleteIndent(line)
-        let n = len(a:line)
-        let short_line = a:line
-        if strpart(a:line, 0, 4) == "    "
-            let short_line = strpart(a:line, 4, n)
-            let short_line = DeleteIndent(short_line)
-        endif
-        return short_line
-    endfunc
-
     function! PythonSend()
-    " TODO doesn't support double indentation
-        if getline('.') == "" && getline(line('.') + 1) == ""
-            SlimuxREPLSendLine
+        let line = getline('.')
+        let next_line = getline(line('.') + 1)
+        if line == "" && next_line == ""
+            SlimuxSendKeys C-m
             exec "normal! j"
-        endif
-        if getline('.') == ""
+        elseif line == ""
             exec "normal! j"
         else
-            let line = DeleteIndent(getline('.'))
-            call SlimuxSendCode(line)
+            SlimuxSendKeys C-a
+            SlimuxSendKeys C-a
+            call SlimuxSendCode(getline('.'))
             exec "normal! j"
         endif
     endfunc

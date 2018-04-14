@@ -240,6 +240,20 @@ A small change in .dotfiles/vim/pack/my-plugins/start/ale/ale_linters/r will sup
 let g:ale_r_lintr_options = get(g:, 'ale_r_lintr_options', 'with_defaults(absolute_paths_linter = NULL, camel_case_linter = NULL)')
 ```
 
+- slimux
+There is a typo in  .dotfiles/vim/pack/my-plugins/start/slimux/plugin/slimux.vim. There is
+
+```
+call system(g:slimux_tmux_path . ' send-keys -t " . target . " " . keys)
+```
+
+wile there sould be
+
+```
+call system(g:slimux_tmux_path . " send-keys -t " . target . " " . keys)
+```
+
+in line 228.
 
 
 _These changes will be ignored by git thanks to `ignore=dirty` option in .gitmodules._
