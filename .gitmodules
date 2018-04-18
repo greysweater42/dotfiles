@@ -109,3 +109,6 @@
 [submodule "vim/pack/my-plugins/start/nvim-completion-manager"]
 	path = vim/pack/my-plugins/start/nvim-completion-manager
 	url = https://github.com/JR4er/nvim-completion-manager
+[submodule "vim/pack/my-plugins/start/ncm-R"]
+	path = vim/pack/my-plugins/start/ncm-R
+	url = https://github.com/gaalcaras/ncm-R
