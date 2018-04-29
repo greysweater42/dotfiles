@@ -42,8 +42,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><s-tab> pumvisible()? "\<c-p>":"\<c-d>"
 " notes with ctrl+b
 nnoremap <C-b> :vsplit note:org<CR>
-" quickly list buffers 
-nnoremap <leader>l :ls<CR>:b<space>
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 " To open a new empty buffer
@@ -91,9 +89,10 @@ match MyGroup /TODO/
 " }}}
 " R settings - Nvim-R {{{
 " Nvim-R
-let R_in_buffer = 0
-let R_tmux_split = 1
-let R_args_in_stline = 1
+tnoremap <C-h> <C-w>w
+tnoremap <C-j> <C-w>w
+tnoremap <C-k> <C-w>w
+tnoremap <leader>l <C-w>:bnext<CR>
 let R_close_term = 1
 let R_assign = 0
 augroup filetype_R
