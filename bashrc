@@ -42,7 +42,11 @@ PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 
 # java settings for proper Hadoop running
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/java
+if [ $USER == tomek ]; then
+    export JAVA_HOME=/usr/local/java/
+else
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/java
+fi
 export PATH=$PATH:$JAVA_HOME/bin
 
 # hadoop path
