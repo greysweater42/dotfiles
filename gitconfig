@@ -1,6 +1,6 @@
 [user]
-    email = tomis9@buziaczek.pl
-    name = tomek
+    email = tomasz.dyrka@iiit.pl
+    name = dyrkat
 
 [alias]
     l = log --pretty=oneline --abbrev-commit --abbrev=4 -25

@@ -58,3 +58,5 @@ if [ "$(whoami)" == "tomek" ]; then
     alias sudo='sudo '
     alias django-admin.py=/opt/python3.3/bin/django-admin.py
 fi
+
+export LD_LIBRARY_PATH=/usr/lib/jvm/jre/lib/amd64:/usr/lib/jvm/jre/lib/amd64/default
