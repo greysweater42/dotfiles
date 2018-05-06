@@ -193,6 +193,11 @@ augroup filetype_python
         endif
     endfunc
     autocmd FileType python nmap <space> :call PythonSend()<CR>
+    " default ale setting is python3
+    if match(getline(1), "python$") > 0
+        let g:ale_python_flake8_executable = 'python'
+        let g:ale_python_flake8_options = '-m flake8'     
+    endif
 augroup END
 " }}}
 " sql settings - dbext.vim {{{
