@@ -60,3 +60,7 @@ if [ "$(whoami)" == "tomek" ]; then
 fi
 
 export LD_LIBRARY_PATH=/usr/lib/jvm/jre/lib/amd64:/usr/lib/jvm/jre/lib/amd64/default
+
+alias gitka='gitk --all'
+alias gsta='git status'
+alias glog='git log --oneline'

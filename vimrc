@@ -108,6 +108,7 @@ augroup filetype_R
     autocmd FileType r nmap <buffer> <LocalLeader>h <LocalLeader>rh
     autocmd FileType r nmap <buffer> <LocalLeader>v <LocalLeader>rv
     autocmd FileType r nmap <buffer> <F5> <LocalLeader>aa
+    autocmd FileType r nmap <buffer> <F10> :!clear; Rscript -e "testthat::test_dir('tests')"<CR>
     autocmd BufRead,BufNewFile *.Rnw nmap <Space> <LocalLeader>l<Enter>
     autocmd BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
     autocmd BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
