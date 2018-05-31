@@ -144,6 +144,15 @@ augroup filetype_R
         autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
         autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
     " endif
+    function! MyRBuildTags()
+        if filereadable("etags")
+            call RWarningMsg('The file "etags" exists. Please, delete it and try again.')
+            return
+        endif
+        call g:SendCmdToR('rtags(ofile = "etags", recursive = TRUE); etags2ctags("etags", "tags"); unlink("etags")')
+    endfunction
+    autocmd FileType r nmap <buffer> <C-S-R> :call MyRBuildTags()<CR>
+
 
 augroup END
 " }}}
