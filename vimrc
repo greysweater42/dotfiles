@@ -174,22 +174,42 @@ augroup filetype_python
         ScreenShell ipython3
         SlimuxGlobalConfigure
     endfunc
-    autocmd FileType python nmap <F2> :call SetupSlimux()<CR>
+    autocmd FileType python nmap <F2> :VimuxRunCommand("ipython3")<CR>
     autocmd FileType python nmap <F3> :Codi python<Return>
 
+    let g:VimuxOrientation = "h"
+    let g:VimuxHeight = "40"
+    let g:VimuxResetSequence = "C-a"
+
+    "python indentation support is a little bit complex
+    " does not support empty lines e.g. inside classes
     function! PythonSend()
-        let line = getline('.')
+        let current_line = getline('.')
         let next_line = getline(line('.') + 1)
-        if line == "" && next_line == ""
-            SlimuxSendKeys C-m
+        if current_line == "" && next_line == ""
+            call VimuxSendKeys("C-m")
             exec "normal! j"
-        elseif line == ""
+        elseif current_line == ""
             exec "normal! j"
-        else
-            SlimuxSendKeys C-a
-            SlimuxSendKeys C-a
-            call SlimuxSendCode(getline('.'))
+        else 
+            VimuxRunCommand(current_line)
             exec "normal! j"
+            let current_line = getline('.')
+            let is_next = 0
+            while strpart(current_line, 0, 1) == " "
+                if line('.') == line('$')
+                    VimuxRunCommand(current_line)
+                    let is_next = 1
+                    break
+                endif
+                VimuxRunCommand(current_line)
+                exec "normal! j"
+                let current_line = getline('.')
+                let is_next = 1
+            endwhile
+            if is_next
+                call VimuxSendKeys("C-m")
+            endif
         endif
     endfunc
     autocmd FileType python nmap <space> :call PythonSend()<CR>

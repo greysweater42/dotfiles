@@ -112,3 +112,6 @@
 [submodule "vim/pack/my-plugins/start/ncm-R"]
 	path = vim/pack/my-plugins/start/ncm-R
 	url = https://github.com/gaalcaras/ncm-R
+[submodule "vim/pack/my-plugins/start/vimux"]
+	path = vim/pack/my-plugins/start/vimux
+	url = https://github.com/benmills/vimux
