@@ -3,6 +3,7 @@ options(scipen=999)
 if (Sys.info()[["user"]] == "dyrkat") {
   .libPaths("~/.R/3.4.4")
   library(shiny)
+  ra <- runApp
 } else {
   .libPaths("~/.R/3.4.2")
 }

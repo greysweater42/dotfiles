@@ -177,6 +177,32 @@ _and thn run_
     rm -r vim
 ```
 
+or locally, without lua support:
+ 
+```
+./configure \
+--enable-multibyte \
+--enable-python3interp \
+--with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
+--enable-cscope \
+--enable-gui=auto \
+--with-features=huge \
+--with-x \
+--enable-fontset \
+--enable-largefile \
+--disable-netbeans \
+--with-compiledby="dyrkat" \
+--enable-fail-if-missing \
+--prefix=/home/dyrkat/.local
+```
+
+and then
+
+```
+make
+make install
+```
+
 ### dotfiles installation
 
 ```

@@ -108,6 +108,7 @@ augroup filetype_R
     autocmd FileType r nmap <buffer> <LocalLeader>h <LocalLeader>rh
     autocmd FileType r nmap <buffer> <LocalLeader>v <LocalLeader>rv
     autocmd FileType r nmap <buffer> <F5> <LocalLeader>aa
+    autocmd FileType r nmap <buffer> <F10> :!clear; Rscript -e "testthat::test_dir('tests')"<CR>
     autocmd BufRead,BufNewFile *.Rnw nmap <Space> <LocalLeader>l<Enter>
     autocmd BufRead,BufNewFile *.Rnw nmap <LocalLeader>rf <Plug>RStart
     autocmd BufRead,BufNewFile *.Rnw nmap <F2> <LocalLeader>kp
@@ -143,6 +144,14 @@ augroup filetype_R
         autocmd FileType r set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
         autocmd FileType rnoweb set tags+=~/.cache/Nvim-R/Rtags,~/.cache/Nvim-R/RsrcTags
     " endif
+    function! MyRBuildTags()
+        if filereadable("etags")
+            call RWarningMsg('The file "etags" exists. Please, delete it and try again.')
+            return
+        endif
+        call g:SendCmdToR('rtags(ofile = "etags", recursive = TRUE); etags2ctags("etags", "tags"); unlink("etags")')
+    endfunction
+    autocmd FileType r nmap <buffer> <F4> :call MyRBuildTags()<CR>
 
 augroup END
 " }}}
@@ -176,6 +185,7 @@ augroup filetype_python
     endfunc
     autocmd FileType python nmap <F2> :VimuxRunCommand("ipython3")<CR>
     autocmd FileType python nmap <F3> :Codi python<Return>
+    autocmd FileType python nmap <F4> :!ctags -R .<Return>
 
     let g:VimuxOrientation = "h"
     let g:VimuxHeight = "40"
