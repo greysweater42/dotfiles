@@ -151,8 +151,7 @@ augroup filetype_R
         endif
         call g:SendCmdToR('rtags(ofile = "etags", recursive = TRUE); etags2ctags("etags", "tags"); unlink("etags")')
     endfunction
-    autocmd FileType r nmap <buffer> <C-S-R> :call MyRBuildTags()<CR>
-
+    autocmd FileType r nmap <buffer> <F4> :call MyRBuildTags()<CR>
 
 augroup END
 " }}}
@@ -186,6 +185,7 @@ augroup filetype_python
     endfunc
     autocmd FileType python nmap <F2> :call SetupSlimux()<CR>
     autocmd FileType python nmap <F3> :Codi python<Return>
+    autocmd FileType python nmap <F4> :!ctags -R .<Return>
 
     function! PythonSend()
         let line = getline('.')
