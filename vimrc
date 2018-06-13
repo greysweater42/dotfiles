@@ -190,36 +190,45 @@ augroup filetype_python
     let g:VimuxOrientation = "h"
     let g:VimuxHeight = "40"
     let g:VimuxResetSequence = "C-a"
-
-    "python indentation support is a little bit complex
-    " does not support empty lines e.g. inside classes
+    
+    " len(substitute("    abcd", "[a-zA-Z].*", "", "")) 
     function! PythonSend()
         let current_line = getline('.')
         let next_line = getline(line('.') + 1)
-        if current_line == "" && next_line == ""
-            call VimuxSendKeys("C-m")
-            exec "normal! j"
-        elseif current_line == ""
-            exec "normal! j"
-        else 
+        if current_line == "" 
+            while current_line == ""
+                exec "normal! j0"
+                let current_line = getline('.')
+            endwhile
+        elseif strpart(current_line, 0, 1) != " "
             VimuxRunCommand(current_line)
-            exec "normal! j"
+            exec "normal! j0"
             let current_line = getline('.')
+            let next_line = getline(line('.') + 1)
             let is_next = 0
-            while strpart(current_line, 0, 1) == " "
+            while strpart(current_line, 0, 1) == " " || (current_line == "" && strpart(next_line, 0, 1) == " ")
                 if line('.') == line('$')
                     VimuxRunCommand(current_line)
                     let is_next = 1
                     break
                 endif
-                VimuxRunCommand(current_line)
-                exec "normal! j"
+                if current_line != ""
+                    VimuxRunCommand(current_line)
+                endif
+                exec "normal! j0"
                 let current_line = getline('.')
                 let is_next = 1
+            endwhile
+            while current_line == ""
+                exec "normal! j0"
+                let current_line = getline('.')
             endwhile
             if is_next
                 call VimuxSendKeys("C-m")
             endif
+        else
+            VimuxRunCommand(current_line)
+            exec "normal! j0"
         endif
     endfunc
     autocmd FileType python nmap <space> :call PythonSend()<CR>
