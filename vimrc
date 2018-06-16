@@ -191,44 +191,47 @@ augroup filetype_python
     let g:VimuxHeight = "40"
     let g:VimuxResetSequence = "C-a"
     
-    " len(substitute("    abcd", "[a-zA-Z].*", "", "")) 
     function! PythonSend()
         let current_line = getline('.')
-        let next_line = getline(line('.') + 1)
         if current_line == "" 
             while current_line == ""
+                if line('.') == line('$')
+                    break
+                endif
                 exec "normal! j0"
                 let current_line = getline('.')
             endwhile
-        elseif strpart(current_line, 0, 1) != " "
+        else
+            let indent = len(substitute(current_line, "[a-zA-Z].*", "", ""))
             VimuxRunCommand(current_line)
             exec "normal! j0"
             let current_line = getline('.')
-            let next_line = getline(line('.') + 1)
-            let is_next = 0
-            while strpart(current_line, 0, 1) == " " || (current_line == "" && strpart(next_line, 0, 1) == " ")
-                if line('.') == line('$')
-                    VimuxRunCommand(current_line)
-                    let is_next = 1
-                    break
-                endif
+            let indent_next = len(substitute(current_line, "[a-zA-Z].*", "", ""))
+            let is_send = 0
+            while indent_next != indent
                 if current_line != ""
                     VimuxRunCommand(current_line)
                 endif
+                if line('.') == line('$')
+                    break
+                endif
                 exec "normal! j0"
                 let current_line = getline('.')
-                let is_next = 1
+                if current_line != ""
+                    let indent_next = len(substitute(current_line, "[a-zA-Z].*", "", ""))
+                    let is_send = 1
+                endif
             endwhile
-            while current_line == ""
-                exec "normal! j0"
-                let current_line = getline('.')
-            endwhile
-            if is_next
+            if is_send
                 call VimuxSendKeys("C-m")
             endif
-        else
-            VimuxRunCommand(current_line)
-            exec "normal! j0"
+            while current_line == ""
+                if line('.') == line('$')
+                    break
+                endif
+                exec "normal! j0"
+                let current_line = getline('.')
+            endwhile
         endif
     endfunc
     autocmd FileType python nmap <space> :call PythonSend()<CR>
