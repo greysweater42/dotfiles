@@ -263,6 +263,13 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldlevel=0
 augroup END
 " }}}
+
+" C settings - c.vim
+augroup c_settings
+    autocmd BufRead,BufNewFile *.c nmap <F6> <LocalLeader>rc
+    autocmd BufRead,BufNewFile *.c nmap <F5> <LocalLeader>rr
+augroup END
+
 " various plugins {{{
 " vim-airline (powerline) 
 let g:airline_powerline_fonts = 1

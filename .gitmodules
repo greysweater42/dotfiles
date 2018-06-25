@@ -115,3 +115,6 @@
 [submodule "vim/pack/my-plugins/start/vimux"]
 	path = vim/pack/my-plugins/start/vimux
 	url = https://github.com/benmills/vimux
+[submodule "vim/pack/my-plugins/start/c.vim"]
+	path = vim/pack/my-plugins/start/c.vim
+	url = https://github.com/vim-scripts/c.vim
