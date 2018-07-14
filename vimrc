@@ -208,7 +208,7 @@ augroup filetype_python
             let current_line = getline('.')
             let indent_next = len(substitute(current_line, "[a-zA-Z].*", "", ""))
             let is_send = 0
-            while indent_next != indent
+            while indent_next != indent || current_line == ""
                 if current_line != ""
                     VimuxRunCommand(current_line)
                 endif
