@@ -64,3 +64,20 @@ export LD_LIBRARY_PATH=/usr/lib/jvm/jre/lib/amd64:/usr/lib/jvm/jre/lib/amd64/def
 alias gitka='gitk --all'
 alias gsta='git status'
 alias glog='git log --oneline'
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+eval "$(pyenv virtualenv-init -)"
+
+# prophet
+export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
+export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
+export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+
+export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
+
