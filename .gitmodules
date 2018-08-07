@@ -118,3 +118,6 @@
 [submodule "vim/pack/my-plugins/start/c.vim"]
 	path = vim/pack/my-plugins/start/c.vim
 	url = https://github.com/vim-scripts/c.vim
+[submodule "vim/pack/my-plugins/start/emmet-vim"]
+	path = vim/pack/my-plugins/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim
