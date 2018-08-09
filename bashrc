@@ -27,17 +27,17 @@ alias la='ls -A'
 alias l='ls -l'
 
 # start tmux
-tmux attach &> /dev/null
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
+# tmux attach &> /dev/null
+# if [[ ! $TERM =~ screen ]]; then
+#     exec tmux
+# fi
 
 # prompt colors
 git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
-HOST='\033[02;36m\]\h'; HOST=' '$HOST
-TIME='\033[01;31m\]\t \033[01;32m\]'
-LOCATION=' \033[01;34m\]`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"`'
-BRANCH=' \033[00;33m\]$(git_branch)\[\033[00m\]\n\$ '
+HOST='\033[02;36m\h'; HOST=' '$HOST
+TIME='\033[01;31m\t \033[01;32m'
+LOCATION=' \033[01;34m`pwd | sed "s#\(/[^/]\{1,\}/[^/]\{1,\}/[^/]\{1,\}/\).*\(/[^/]\{1,\}/[^/]\{1,\}\)/\{0,1\}#\1_\2#g"`'
+BRANCH=' \033[00;33m$(git_branch)\[\033[00m\]\n\$ '
 PS1=$TIME$USER$HOST$LOCATION$BRANCH
 PS2='\[\033[01;36m\]>'
 
@@ -45,7 +45,7 @@ PS2='\[\033[01;36m\]>'
 if [ $USER == tomek ]; then
     export JAVA_HOME=/usr/local/java/
 else
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/java
+    export JAVA_HOME=/home/dyrkat/Programs/jdk1.8.0_181
 fi
 export PATH=$PATH:$JAVA_HOME/bin
 
