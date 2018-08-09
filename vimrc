@@ -246,11 +246,8 @@ if $USER == "dyrkat"
 else
     let file_path = $HOME . "/pass/pass.txt"
 endif
-let g:dbext_default_user = readfile(file_path)[0]
-let g:dbext_default_passwd = readfile(file_path)[1]
-let g:dbext_default_host = readfile(file_path)[2]
-let g:dbext_default_dbname = readfile(file_path)[3]
-let g:dbext_default_type = readfile(file_path)[4]
+let g:dbext_default_profile_ds3 = 'type=mysql:extra=--defaults-file='.$HOME.'/pass/dbext/prophet_ds3 -t'
+let g:dbext_default_history_file = $HOME . '/.dbext_sql_history'
 
 autocmd FileType sql nmap <buffer> <space> <leader>sel
 autocmd FileType sql vmap <buffer> <space> <leader>se
@@ -263,13 +260,20 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldlevel=0
 augroup END
 " }}}
-
-" C settings - c.vim
+" C settings - c.vim ------------------{{{
 augroup c_settings
     autocmd BufRead,BufNewFile *.c nmap <F6> <LocalLeader>rc
     autocmd BufRead,BufNewFile *.c nmap <F5> <LocalLeader>rr
 augroup END
-
+" }}}
+" scala settings ------------------{{{
+autocmd FileType scala nmap <F2> :VimuxRunCommand("scala")<CR>
+function! ScalaSend()
+    VimuxRunCommand(getline('.'))
+    exec "normal! j0"
+endfunc
+autocmd FileType scala nmap <space> :call ScalaSend()<CR>
+" }}}
 " various plugins {{{
 " vim-airline (powerline) 
 let g:airline_powerline_fonts = 1

@@ -121,3 +121,6 @@
 [submodule "vim/pack/my-plugins/start/emmet-vim"]
 	path = vim/pack/my-plugins/start/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "vim/pack/my-plugins/start/vim-scala"]
+	path = vim/pack/my-plugins/start/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
