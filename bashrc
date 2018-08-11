@@ -26,6 +26,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -l'
 
+alias t=tmux
+alias tll='tmux new-session -s left'
+alias trr='tmux new-session -t left -s right'
+
 # start tmux
 # tmux attach &> /dev/null
 # if [[ ! $TERM =~ screen ]]; then
