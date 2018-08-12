@@ -74,10 +74,11 @@ fi
 eval "$(pyenv virtualenv-init -)"
 
 # prophet
-export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
-export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
-export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+if [ $USER != tomek ]; then
+    export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
+    export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
+    export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
 
-export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
-export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
-
+    export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+    export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
+fi
