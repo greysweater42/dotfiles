@@ -241,13 +241,18 @@ augroup filetype_python
 augroup END
 " }}}
 " sql settings - dbext.vim {{{
-if $USER == "dyrkat"
-    let file_path = $HOME . "/pass/pass_anr.txt"
-else
-    let file_path = $HOME . "/pass/pass.txt"
-endif
-let g:dbext_default_profile_ds3 = 'type=mysql:extra=--defaults-file='.$HOME.'/pass/dbext/prophet_ds3 -t'
 let g:dbext_default_history_file = $HOME . '/.dbext_sql_history'
+let g:dbext_default_window_width = 60
+let g:dbext_default_window_height = 60
+
+function! Choose_profile(profile_number)
+    let g:dbext_default_profile_ds3 = 'type=mysql:extra=--defaults-file='.$HOME.'/pass/dbext/prophet_ds3 -t'
+    let s:dbext_profiles = ['ds3']
+    let l:exec_string = ':DBSetOption profile=' . s:dbext_profiles[a:profile_number]
+    echo s:dbext_profiles[a:profile_number]
+    execute l:exec_string
+endfunction
+nnoremap <F2> :call Choose_profile(0)<CR>
 
 autocmd FileType sql nmap <buffer> <space> <leader>sel
 autocmd FileType sql vmap <buffer> <space> <leader>se

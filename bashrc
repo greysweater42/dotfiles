@@ -27,8 +27,8 @@ alias la='ls -A'
 alias l='ls -l'
 
 alias t=tmux
-alias tll='tmux new-session -s left'
-alias trr='tmux new-session -t left -s right'
+alias tleft='tmux new-session -s left'
+alias tright='tmux new-session -t left -s right'
 
 # start tmux
 # tmux attach &> /dev/null
@@ -77,12 +77,16 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
-# prophet
-if [ $USER != tomek ]; then
-    export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
-    export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
-    export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+# if [ $USER != tomek ]; then
+    # prophet
+    # export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
+    # export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
+    # export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
 
-    export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
-    export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
-fi
+    # export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+    # export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
+
+    # mesos
+    # export PATH=/home/dyrkat/Programs/apache-maven-3.5.4/bin:$PATH
+# fi
+
