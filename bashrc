@@ -77,16 +77,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 eval "$(pyenv virtualenv-init -)"
 
-# if [ $USER != tomek ]; then
-    # prophet
-    # export PROPHET_LOCAL_DIR="/home/dyrkat/prophet_all"
-    # export C_INCLUDE_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs
-    # export LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
+alias rtest='Rscript -e "testthat::test_dir(\"tests\")"'
 
-    # export LD_LIBRARY_PATH=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka
-    # export LD_PRELOAD=${PROPHET_LOCAL_DIR}/local-rdkafka/libs/librdkafka/librdkafka.so
-
-    # mesos
-    # export PATH=/home/dyrkat/Programs/apache-maven-3.5.4/bin:$PATH
-# fi
-
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
