@@ -76,4 +76,7 @@ alias glog='git log --oneline'
 alias rtest='Rscript -e "testthat::test_dir(\"tests\")"'
 
 # language setting
-export LC_ALL=C
+#export LC_ALL=C
+#export LANG="en_US.UTF-8"
+
+alias todo='todo -A'
