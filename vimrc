@@ -156,17 +156,17 @@ augroup filetype_R
 augroup END
 " }}}
 " latex settings - vim-latex {{{
-let g:Tex_ViewRule_pdf = 'zathura'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_SmartKeyDot=0
-augroup filetype_tex
-    autocmd!
-    autocmd FileType tex NeoCompleteLock    
-    autocmd FileType tex setlocal foldlevel=1
-    autocmd BufRead,BufNewFile *.tex map <F2> <Esc>:w<Enter><leader>ll<Return>
-    autocmd BufRead,BufNewFile *.tex map <F4> <Esc><leader>ll<Return>:<C-U>exec '!bibtex '.Tex_GetMainFileName(':p:t:r')<CR><leader>ll<Return>
-    autocmd BufRead,BufNewFile *.tex map <F3> <leader>lv
-augroup END
+" let g:Tex_ViewRule_pdf = 'zathura'
+" let g:Tex_DefaultTargetFormat = 'pdf'
+" let g:Tex_SmartKeyDot=0
+" augroup filetype_tex
+"     autocmd!
+"     autocmd FileType tex NeoCompleteLock    
+"     autocmd FileType tex setlocal foldlevel=1
+"     autocmd BufRead,BufNewFile *.tex map <F2> <Esc>:w<Enter><leader>ll<Return>
+"     autocmd BufRead,BufNewFile *.tex map <F4> <Esc><leader>ll<Return>:<C-U>exec '!bibtex '.Tex_GetMainFileName(':p:t:r')<CR><leader>ll<Return>
+"     autocmd BufRead,BufNewFile *.tex map <F3> <leader>lv
+" augroup END
 " }}}
 " python settings {{{
 augroup filetype_python
@@ -345,3 +345,5 @@ let g:localvimrc_whitelist = '/home/tomek/nauka/R/build/.lvimrc'
 let g:localvimrc_sandbox = 0
 
 " }}}
+
+let g:instant_markdown_autostart = 0
