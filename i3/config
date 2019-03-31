@@ -26,7 +26,7 @@
 # Key to rule them all : Super(Windows) or Alt key?
 
 #Mod4 = Windows or Super key on keyboard
-Mod1 = Alt key on keyboard
+#Mod1 = Alt key on keyboard
 
 #Set Alt key
 set $mod Mod1
@@ -240,7 +240,7 @@ bindsym $mod+Shift+Right move right
 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
-bindsym $mod+Tab workspace back_and_forth
+#bindsym $mod+Tab workspace back_and_forth
 
 #navigate workspaces next / previous
 bindsym Mod1+Ctrl+Right workspace next
@@ -261,10 +261,10 @@ for_window [urgent=latest] focus
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym Mod1+Ctrl+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym Mod1+Ctrl+v split v
 
 # enter fullscreen mode for the focused container
 # Super + F in archlabs is execute thunar
@@ -511,31 +511,31 @@ bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
 bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
 #qwerty/azerty conflict with w
 bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
-bindsym control+mod1+f exec --no-startup-id firefox;workspace 1; focus
-bindsym control+mod1+v exec --no-startup-id vivaldi-snapshot;workspace 1; focus
+#bindsym control+mod1+f exec --no-startup-id firefox;workspace 1; focus
+#bindsym control+mod1+v exec --no-startup-id vivaldi-snapshot;workspace 1; focus
 bindsym control+mod1+g exec --no-startup-id chromium-browser;workspace 1;focus
 
 #workspace 2 related
 #bindsym $mod+F2 exec --no-startup-id geany;workspace 2;focus
-bindsym $mod+F2 exec --no-startup-id atom;workspace 2;focus
+#bindsym $mod+F2 exec --no-startup-id atom;workspace 2;focus
 #bindsym control+mod1+w exec --no-startup-id geany;workspace 2;focus
 bindsym control+mod1+w exec --no-startup-id atom;workspace 2;focus
 
 #workspace 3 related
-bindsym $mod+F3 exec --no-startup-id inkscape;workspace 3;focus
+#bindsym $mod+F3 exec --no-startup-id inkscape;workspace 3;focus
 
 #workspace 4 related
-bindsym $mod+F4 exec --no-startup-id gimp;workspace 4;focus
+#bindsym $mod+F4 exec --no-startup-id gimp;workspace 4;focus
 
 #workspace 5 related
-bindsym $mod+F5 exec --no-startup-id meld;workspace 5;focus
+#bindsym $mod+F5 exec --no-startup-id meld;workspace 5;focus
 bindsym control+mod1+i exec --no-startup-id nitrogen;workspace 5;focus
 
 #workspace 6 related
-bindsym $mod+F6 exec --no-startup-id vlc;workspace 6;focus
+#bindsym $mod+F6 exec --no-startup-id vlc;workspace 6;focus
 
 #workspace 7 related
-bindsym $mod+F7 exec --no-startup-id virtualbox;workspace 7;focus
+#bindsym $mod+F7 exec --no-startup-id virtualbox;workspace 7;focus
 
 #workspace 8 related
 for_window [class="Nemo"] focus
@@ -544,7 +544,7 @@ bindsym $mod+Shift+Return exec --no-startup-id nemo; workspace 8;focus
 bindsym control+mod1+b exec --no-startup-id nemo;workspace 8;focus
 
 #workspace 9 related
-bindsym $mod+F9 exec --no-startup-id evolution;workspace 9;focus
+#bindsym $mod+F9 exec --no-startup-id evolution;workspace 9;focus
 bindsym control+mod1+e exec --no-startup-id evolution;workspace 9;focus
 #bindsym $mod+F9 exec --no-startup-id geary;workspace 9;focus
 #bindsym control+mod1+e exec --no-startup-id geary;workspace 9;focus
@@ -644,19 +644,19 @@ for_window [class="Terminator"] focus
 
 #Variety keybindings mod1 = ALT
 # trash wallpaper
-bindsym mod1+t exec --no-startup-id variety -t
+#bindsym mod1+t exec --no-startup-id variety -t
 # next wallpaper
-bindsym mod1+n exec --no-startup-id variety -n
-bindsym mod1+Right exec --no-startup-id variety -n
+#bindsym mod1+n exec --no-startup-id variety -n
+#bindsym mod1+Right exec --no-startup-id variety -n
 # previous wallpaper
-bindsym mod1+p exec --no-startup-id variety -p
-bindsym mod1+Left exec --no-startup-id variety -p
+#bindsym mod1+p exec --no-startup-id variety -p
+#bindsym mod1+Left exec --no-startup-id variety -p
 # favorite wallpaper
-bindsym mod1+f exec --no-startup-id variety -f
+#bindsym mod1+f exec --no-startup-id variety -f
 # pause wallpaper
-bindsym mod1+Up exec --no-startup-id variety --pause
+#bindsym mod1+Up exec --no-startup-id variety --pause
 # resume wallpaper
-bindsym mod1+Down exec --no-startup-id variety --resume
+#bindsym mod1+Down exec --no-startup-id variety --resume
 
 
 
@@ -747,10 +747,10 @@ popup_during_fullscreen smart
 
 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
-#smart_gaps on
-#smart_borders on
+# gaps inner 5
+# gaps outer 5
+# smart_gaps on
+# smart_borders on
 
 
 
