@@ -183,7 +183,8 @@ augroup filetype_python
         ScreenShell ipython3
         SlimuxGlobalConfigure
     endfunc
-    autocmd FileType python nmap <F2> :VimuxRunCommand("ipython3")<CR>
+    "autocmd FileType python nmap <F2> :VimuxRunCommand("ipython3")<CR>
+    autocmd FileType python nmap <F2> :call term_start("ipython3", {"term_name":"python"})<Return>
     autocmd FileType python nmap <F3> :Codi python<Return>
     autocmd FileType python nmap <F4> :!ctags -R .<Return>
 
@@ -203,14 +204,14 @@ augroup filetype_python
             endwhile
         else
             let indent = len(substitute(current_line, "[a-zA-Z].*", "", ""))
-            VimuxRunCommand(current_line)
+            call term_sendkeys("python", current_line)
             exec "normal! j0"
             let current_line = getline('.')
             let indent_next = len(substitute(current_line, "[a-zA-Z].*", "", ""))
             let is_send = 0
             while indent_next != indent || current_line == ""
                 if current_line != ""
-                    VimuxRunCommand(current_line)
+                    call term_sendkeys("python", current_line)
                 endif
                 if line('.') == line('$')
                     break
@@ -223,7 +224,7 @@ augroup filetype_python
                 endif
             endwhile
             if is_send
-                call VimuxSendKeys("C-m")
+                call term_sendkeys("python", "\<c-m>")
             endif
             while current_line == ""
                 if line('.') == line('$')
