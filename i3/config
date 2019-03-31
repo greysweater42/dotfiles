@@ -268,7 +268,7 @@ bindsym Mod1+Ctrl+v split v
 
 # enter fullscreen mode for the focused container
 # Super + F in archlabs is execute thunar
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # qwerty/azerty issue for letter z
