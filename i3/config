@@ -696,7 +696,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease
 
 
 # bar toggle, hide or show
-bindsym $mod+b bar mode toggle
+# bindsym $mod+b bar mode toggle
 
 
 #####################################################################################################################
@@ -822,9 +822,9 @@ exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 bar {
 
-    height 25
+    height 20
     workspace_buttons yes
-    font pango:Noto Sans 14
+    font pango:Noto Sans 12
     #you can know the name via xrandr
     #output DVI-0
 
@@ -845,8 +845,8 @@ bar {
     # put hastag in front if not installed
 
 #status_command i3blocks
-status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+#status_command i3blocks -c ~/.config/i3/i3blocks.conf
+status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
 #status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
 
 
