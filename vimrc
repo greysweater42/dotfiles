@@ -94,11 +94,11 @@ tnoremap <C-j> <C-w>w
 tnoremap <C-k> <C-w>w
 tnoremap <leader>l <C-w>:bnext<CR>
 " if tmux is on, use tmux
-if system("tmux info | wc -l") > 0
-    let R_in_buffer = 0
-    let R_tmux_split = 1
-    let R_args_in_stline = 1
-endif
+" if system("tmux info | wc -l") > 0
+"     let R_in_buffer = 0
+"     let R_tmux_split = 1
+"     let R_args_in_stline = 1
+" endif
 let R_close_term = 1
 let R_assign = 0
 augroup filetype_R
