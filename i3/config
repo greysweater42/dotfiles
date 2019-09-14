@@ -193,3 +193,4 @@ bindsym $mod+d exec rofi -show run -lines 10
 
 exec_always compton -f --fade-delta=5
 bindsym $mod+p exec bash ~/Programs/pycharm-2019.2.1/bin/pycharm.sh
+bindsym $mod+c exec google-chrome
