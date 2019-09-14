@@ -140,3 +140,18 @@ make install
     ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
     ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ```
+
+i3
+
+wifi: nmtui                                                                      
+
+```
+sudo apt install i3lock -y
+sudo apt install xbacklight -y
+sudo apt install feh -y
+sudo apt install arandr -y
+sudo apt install i3status -y
+sudo apt install i3blocks -y
+sudo apt install rofi -y
+sudo apt install compton -y
+```
