@@ -79,3 +79,6 @@ alias rtest='Rscript -e "testthat::test_dir(\"tests\")"'
 # export LC_ALL=C
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+
+
+alias vim=nvim
