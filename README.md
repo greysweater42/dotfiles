@@ -132,6 +132,7 @@ make install
 
 ```
     git clone https://github.com/tomis9/dotfiles ~/.dotfiles
+    mkdir -p .dotfiles/vim/plugged
     cp .bashrc .bachrc_backup
     ln -sf ~/.dotfiles/bashrc ~/.bashrc
     ln -sf ~/.dotfiles/Rprofile ~/.Rprofile

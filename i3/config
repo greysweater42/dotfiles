@@ -152,7 +152,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Control+Mod1+l exec i3lock
+bindsym Control+Mod1+l exec i3lock --color=000000
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -179,12 +179,12 @@ bar {
   status_command i3blocks # -c /home/td/.config/i3/i3blocks.conf
   position top
   colors {
-	  background $bg-color
-    separator #757575
-    #                  border             background text
-      focused_workspace  $bg-color          $bg-color          $text-color
- 	  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-	  urgent_workspace   $inactive-bg-color $inactive-bg-color $inactive-text-color
+  background $bg-color
+  separator #757575
+  #                  border             background text
+  focused_workspace  $bg-color          $bg-color          $text-color
+  inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+  urgent_workspace   $inactive-bg-color $inactive-bg-color $inactive-text-color
   }
 }
 
