@@ -82,3 +82,11 @@ export LC_CTYPE=en_US.UTF-8
 
 
 alias vim=nvim
+alias r=ranger
+
+# Commands to be executed before the prompt is displayed
+# Save current working dir
+PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
+
+# Change to saved working dir
+[[ -f "${HOME}/.cwd" ]] && cd "$(< ${HOME}/.cwd)"
