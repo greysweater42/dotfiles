@@ -1,10 +1,10 @@
 syntax on
 filetype plugin indent on
 set encoding=utf-8
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " plugins {{{
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim')
 
     " jedi for python - autocomplerion and docs data
     " Plug 'davidhalter/jedi-vim'   
@@ -49,6 +49,9 @@ call plug#begin('~/.vim/plugged')
     " csv files support
 	Plug 'chrisbra/csv.vim'
 
+    " ctrl-z as a tree
+    Plug 'mbbill/undotree'
+
     " instead of ctrlp - fuzzy search
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
@@ -58,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 
     " git plugin
     Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     " easily change surrouning with cs
     Plug 'tpope/vim-surround'
@@ -259,3 +263,6 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" undotree toggle
+noremap <C-z> :UndotreeToggle<CR>
