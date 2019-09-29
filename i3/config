@@ -166,8 +166,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-exec_always feh --bg-scale /home/td/Desktop/.wallpaper.jpeg
-
 
 set $bg-color #2f343f
 set $inactive-bg-color #2f343f
@@ -195,7 +193,8 @@ bar {
   }
 }
 
-bindsym $mod+d exec rofi -show run -lines 10
+bindsym $mod+d exec rofi -show run -lines 10 -theme solarized
+
 # bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 exec_always compton -f --fade-delta=5
@@ -204,5 +203,9 @@ bindsym $mod+c exec google-chrome
 
 bindsym $mod+x move workspace to output left
 bindsym $mod+Shift+x move workspace to output right
+bindsym $mod+m exec bash /home/td/.dotfiles/i3/monitors.sh
 
 exec bash /home/td/.dotfiles/i3/monitors.sh
+exec_always feh --bg-scale /home/td/Desktop/.wallpaper_mountains.jpg
+
+# exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
