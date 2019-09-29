@@ -206,6 +206,7 @@ bindsym $mod+Shift+x move workspace to output right
 bindsym $mod+m exec bash /home/td/.dotfiles/i3/monitors.sh
 
 exec --no-startup-id bash /home/td/.dotfiles/i3/monitors.sh
+exec --no-startup-id nm-applet
 exec_always --no-startup-id feh --bg-scale /home/td/.dotfiles/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
