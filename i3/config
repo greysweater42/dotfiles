@@ -197,7 +197,7 @@ bindsym $mod+d exec rofi -show run -lines 10 -theme solarized
 
 # bindsym $mod+d exec rofi -show run -lines 10 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
-exec_always compton -f --fade-delta=5
+exec_always --no-startup-id compton -f --fade-delta=5
 bindsym $mod+p exec bash ~/Programs/pycharm-2019.2.1/bin/pycharm.sh
 bindsym $mod+c exec google-chrome
 
@@ -205,7 +205,7 @@ bindsym $mod+x move workspace to output left
 bindsym $mod+Shift+x move workspace to output right
 bindsym $mod+m exec bash /home/td/.dotfiles/i3/monitors.sh
 
-exec bash /home/td/.dotfiles/i3/monitors.sh
-exec_always feh --bg-scale /home/td/.dotfiles/wallpaper.jpg
+exec --no-startup-id bash /home/td/.dotfiles/i3/monitors.sh
+exec_always --no-startup-id feh --bg-scale /home/td/.dotfiles/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
