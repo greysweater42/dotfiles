@@ -72,6 +72,9 @@ call plug#begin('~/.vim')
     " ctrlp for fuzzy files search
     Plug 'kien/ctrlp.vim'
 
+    " markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 call plug#end()
 " }}}
 " hotkeys and options {{{
