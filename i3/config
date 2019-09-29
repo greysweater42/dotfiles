@@ -162,9 +162,9 @@ bindsym $mod+r mode "resize"
 bindsym Control+Mod1+l exec i3lock --color=000000
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec bash ~/.dotfiles/i3/sound/volume_up.sh #increase sound volume
+bindsym XF86AudioLowerVolume exec bash ~/.dotfiles/i3/sound/volume_down.sh #decrease sound volume
+bindsym XF86AudioMute exec bash ~/.dotfiles/i3/sound/volume_mute.sh # mute sound
 
 
 set $bg-color #2f343f
@@ -203,10 +203,10 @@ bindsym $mod+c exec google-chrome
 
 bindsym $mod+x move workspace to output left
 bindsym $mod+Shift+x move workspace to output right
-bindsym $mod+m exec bash /home/td/.dotfiles/i3/monitors.sh
+bindsym $mod+m exec bash ~/.dotfiles/i3/monitors.sh
 
-exec --no-startup-id bash /home/td/.dotfiles/i3/monitors.sh
+exec --no-startup-id bash ~/.dotfiles/i3/monitors.sh
 exec --no-startup-id nm-applet
-exec_always --no-startup-id feh --bg-scale /home/td/.dotfiles/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
