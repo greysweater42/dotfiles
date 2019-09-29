@@ -221,4 +221,4 @@ mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym Control+$mod1+Delete mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
