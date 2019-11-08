@@ -69,7 +69,7 @@ bindsym $mod+g split h
 # mod+h used by moving between tiles
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -93,7 +93,7 @@ bindsym $mod+a focus parent
 
 set $workspace1 "1: Chrome"
 set $workspace2 "2: Terminals"
-set $workspace3 "3: Slack"
+set $workspace3 "3: VSCode"
 set $workspace4 "4: Pycharm"
 set $workspace5 "5: Spotify"
 
@@ -200,13 +200,14 @@ bindsym $mod+d exec rofi -show run -lines 10 -theme solarized
 exec_always --no-startup-id compton -f --fade-delta=5
 bindsym $mod+p exec bash ~/Programs/pycharm-2019.2.1/bin/pycharm.sh
 bindsym $mod+c exec google-chrome
+bindsym $mod+v exec code
 
 bindsym $mod+x move workspace to output left
 bindsym $mod+Shift+x move workspace to output right
 bindsym $mod+m exec bash ~/.dotfiles/i3/monitors.sh
 
 exec --no-startup-id bash ~/.dotfiles/i3/monitors.sh
-exec --no-startup-id nm-applet
+exec --no-startup-id bash nm-applet
 exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.jpg
 
 # exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
