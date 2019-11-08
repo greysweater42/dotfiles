@@ -1,0 +1,81 @@
+{
+    "files.associations": {
+      "*.rmd": "markdown"
+    },
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+        "before": ["Z", "Z"],
+        "commands": [
+            ":wq"
+        ]
+    },
+    {
+      "before": ["<space>"],
+      "commands": [
+        "python.datascience.execSelectionInteractive", 
+        "cursorDown"
+      ]
+    },
+    {
+      "before": ["_"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["-"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": [
+        "python.datascience.execSelectionInteractive", 
+        "extension.vim_escape"
+      ]
+    }
+  ],
+  "terminal.integrated.rendererType": "canvas",
+  "python.dataScience.sendSelectionToInteractiveWindow": true,
+  "workbench.colorTheme": "Monokai",
+  "terminal.integrated.commandsToSkipShell": [],
+  "window.zoomLevel": 0,
+  "window.enableMenuBarMnemonics": false,
+  "python.dataScience.askForKernelRestart": false
+}
+

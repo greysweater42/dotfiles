@@ -140,6 +140,7 @@ make install
     ln -sf ~/.dotfiles/vim ~/.vim
     ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
     ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+    ln -s /home/td/.dotfiles/settings.json /home/td/.config/Code/User/
 ```
 
 i3
