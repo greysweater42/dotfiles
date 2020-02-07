@@ -166,6 +166,9 @@ bindsym XF86AudioRaiseVolume exec bash ~/.dotfiles/i3/sound/volume_up.sh #increa
 bindsym XF86AudioLowerVolume exec bash ~/.dotfiles/i3/sound/volume_down.sh #decrease sound volume
 bindsym XF86AudioMute exec bash ~/.dotfiles/i3/sound/volume_mute.sh # mute sound
 
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 set $bg-color #2f343f
 set $inactive-bg-color #2f343f
