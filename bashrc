@@ -5,8 +5,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=2000
+HISTSIZE=20000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -70,7 +70,7 @@ fi
 # git
 alias gitka='gitk --all'
 alias gsta='git status'
-alias glog='git log --oneline'
+# alias glog='git log --oneline --graph --decorate --all'
 
 # R
 alias rtest='Rscript -e "testthat::test_dir(\"tests\")"'
@@ -111,3 +111,7 @@ if [ -n "${BASH_VERSION-}" -a -n "${PS1-}" -a -z "${BASH_COMPLETION_VERSINFO-}" 
 
 fi
 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+alias ssh='ssh -A'
+alias venv='source venv/bin/activate'
