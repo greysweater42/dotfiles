@@ -70,12 +70,41 @@
       ]
     }
   ],
+  "python.terminal.activateEnvironment": false,
   "terminal.integrated.rendererType": "canvas",
   "python.dataScience.sendSelectionToInteractiveWindow": true,
   "workbench.colorTheme": "Monokai",
   "terminal.integrated.commandsToSkipShell": [],
   "window.zoomLevel": 0,
   "window.enableMenuBarMnemonics": false,
-  "python.dataScience.askForKernelRestart": false
+  "python.dataScience.askForKernelRestart": false,
+  "editor.suggestSelection": "first",
+  //"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false,
+  "workbench.iconTheme": "ayu",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "workbench.activityBar.visible": true,
+  "editor.minimap.enabled": false,
+  "code-runner.executorMap": {
+    "python": "$pythonPath -u $fullFileName",
+  },
+  "code-runner.showExecutionMessage": false,
+  "code-runner.clearPreviousOutput": true,
+  "python.envFile": "${workspaceFolder}/dev.env",
+  "docker.host": "tcp://localhost:23750",
+  "git.confirmSync": false,
+  "python.linting.flake8Args": [
+    "--max-line-length=88"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.rulers": [
+    { "column": 80, "color": "#333333" },
+    { "column": 88, "color": "#333333" }
+  ]
 }
-
