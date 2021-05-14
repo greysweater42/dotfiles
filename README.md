@@ -3,7 +3,35 @@
 
 Includes all my files starting with "." from my home directory that are likely to be customised (.vimrc, .vim, .tmux.conf, .bashrc etc.).
 
-### installation
+## Installation
+
+```
+git clone https://github.com/greysweater42/dotfiles .dotfiles
+```
+
+```
+
+ln -sf ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash_aliases ~/.bash_aliases
+
+mkdir .config/nvim
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# https://powerline.readthedocs.io/en/master/installation/linux.html#fontconfig
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mv PowerlineSymbols.otf ~/.local/share/fonts/
+fc-cache -vf ~/.local/share/fonts/
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+ln -sf ~/.dotfiles/i3/config ~/.config/i3/
+
+ln -s ~/.dotfiles/settings.json ~/.config/Code/User/
+
+```
+
+### Installation
 
 1. **R** 
 
@@ -44,22 +72,7 @@ and from R console:
     install_github('jalvesaq/colorout')
 ```
 
-2. **git**
-
-```
-    sudo apt-get install git
-```
-
 4. **powerline**
-
-```
-    sudo apt-get install python-pip
-    sudo pip install --upgrade pip
-    sudo pip install setuptools
-    sudo pip install powerline-status
-```
-
-or
 
 ```
     sudo apt-get install python3-pip
@@ -79,81 +92,42 @@ mkdir -p ~/.config/fontconfig/conf.d
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 ```
 
-5. **vim**
+customizing
 
-(installation based on https://gist.github.com/odiumediae/3b22d09b62e9acb7788baf6fdbb77cf8)
-
-_Before you start, you probably need to install a few dependencies:_
 
 ```
-sudo apt-get install python-dev
-sudo apt-get install python3-setuptools
+cd /usr/local/lib/python3.5/dist-packages/powerline/config_files/themes/tmux
+sudo cp default.json default.json.bak
 ```
 
-_and then run_
-
+replace contents of default.json with (sudo vim)
 ```
-    sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
-    sudo apt-get install liblua5.1-dev luajit libluajit-5.1 python-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
-    sudo rm -rf /usr/local/share/vim /usr/bin/vim
-    cd
-    git clone https://github.com/vim/vim
-    cd vim
-    git pull && git fetch
-    ./configure \
-    --enable-multibyte \
-    --enable-perlinterp=dynamic \
-    --enable-pythoninterp=dynamic \
-    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-    --enable-python3interp \
-    --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
-    --enable-luainterp \
-    --with-luajit \
-    --enable-cscope \
-    --enable-gui=auto \
-    --with-features=huge \
-    --with-x \
-    --enable-fontset \
-    --enable-largefile \
-    --disable-netbeans \
-    --with-compiledby="yourname" \
-    --enable-fail-if-missing
-    make && sudo make install
-    cd
-    rm -r vim
-```
+{
+    "segments": {                                                     
+        "right": [
+            {
+                "function": "powerline.segments.common.bat.battery",  
+                "name": "battery", 
+                "args": {
+                    "full_heart": "♥",
+                    "empty_heart": "♥",
+                    "online": "⚡︎ ",
+                    "offline": " "
+                }
+            },
+            {
+                "function": "powerline.segments.common.time.date"
+            },                      
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",                      
+                "args": {                                      
+                    "format": "%H:%M",
+                    "istime": true
+                }
+            }
+        ]
+    } 
+}
 
-and then
-
-```
-make
-make install
-```
-
-```
-    git clone https://github.com/tomis9/dotfiles ~/.dotfiles
-    mkdir -p .dotfiles/vim/plugged
-    cp .bashrc .bachrc_backup
-    ln -sf ~/.dotfiles/bashrc ~/.bashrc
-    ln -sf ~/.dotfiles/Rprofile ~/.Rprofile
-    ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-    ln -sf ~/.dotfiles/vim ~/.vim
-    ln -s ~/.dotfiles/ideavimrc ~/.ideavimrc
-    ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
-    ln -s /home/td/.dotfiles/settings.json /home/td/.config/Code/User/
-```
-
-i3
-
-wifi: nmtui                                                                      
-
-```
-sudo apt install i3lock -y
-sudo apt install xbacklight -y
-sudo apt install feh -y
-sudo apt install arandr -y
-sudo apt install i3status -y
-sudo apt install i3blocks -y
-sudo apt install rofi -y
-sudo apt install compton -y
 ```

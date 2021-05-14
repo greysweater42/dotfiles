@@ -31,58 +31,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias sudo='sudo '
 fi
 
-# ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -l'
-
-# tmux
-# alias t=tmux
-# alias tleft='tmux new-session -s left'
-# alias tright='tmux new-session -t left -s right'
-# start tmux at startup
-# tmux attach &> /dev/null
-# if [[ ! $TERM =~ screen ]]; then
-#     exec tmux
-# fi
-
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# python
-if [ "$(whoami)" == "tomek" ]; then
-    alias python3.3=/opt/python3.3/bin/python3.3
-    alias django-admin.py=/opt/python3.3/bin/django-admin.py
+# keeping aliases in a separate file
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
-
-# pyenv
-if [ -d "$HOME/.pyenv" ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    if command -v pyenv 1>/dev/null 2>&1; then
-      eval "$(pyenv init -)"
-    fi
-    if [ -d "$HOME/.pyenv/plugins/pyenv-virtualenv" ]; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-
-# git
-alias gitka='gitk --all'
-alias gsta='git status'
-# alias glog='git log --oneline --graph --decorate --all'
-
-# R
-alias rtest='Rscript -e "testthat::test_dir(\"tests\")"'
-
-# language setting
-# export LC_ALL=C
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-
-
-alias vim=nvim
-alias r=ranger
 
 # Commands to be executed before the prompt is displayed
 # Save current working dir
@@ -94,24 +49,5 @@ PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
 # enables git completion
 source /usr/share/bash-completion/completions/git
 
-
-# Check for interactive bash and that we haven't already been sourced.
-if [ -n "${BASH_VERSION-}" -a -n "${PS1-}" -a -z "${BASH_COMPLETION_VERSINFO-}" ]; then
-
-    # Check for recent enough version of bash.
-    if [ ${BASH_VERSINFO[0]} -gt 4 ] || \
-       [ ${BASH_VERSINFO[0]} -eq 4 -a ${BASH_VERSINFO[1]} -ge 1 ]; then
-        [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion" ] && \
-            . "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion"
-        if shopt -q progcomp && [ -r /usr/share/bash-completion/bash_completion ]; then
-            # Source completion code.
-            . /usr/share/bash-completion/bash_completion
-        fi
-    fi
-
-fi
-
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-alias ssh='ssh -A'
-alias venv='source venv/bin/activate'
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/id_rsa
