@@ -115,7 +115,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec bash ~/.dotfiles/i3/monitors.sh; restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -192,12 +192,14 @@ bindsym $mod+d exec rofi -show run -lines 10 -theme solarized
 exec_always --no-startup-id compton -f --fade-delta=5
 bindsym $mod+c exec google-chrome
 bindsym $mod+v exec code
+bindsym $mod+shift+s exec bash ~/.dotfiles/i3/monitors.sh
 
 bindsym $mod+x move workspace to output left
 bindsym $mod+Shift+x move workspace to output right
 
 exec --no-startup-id nm-applet
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.jpg
+exec --no-startup-id gnome-pomodoro --no-default-window
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper_tatry.jpg
 
 
 # Create Log out, Reboot, Poweroff bindings
