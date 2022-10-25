@@ -1,7 +1,7 @@
 {
-    "files.associations": {
-      "*.rmd": "markdown"
-    },
+  "files.associations": {
+    "*.rmd": "markdown"
+  },
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
@@ -10,101 +10,114 @@
   "vim.leader": ",",
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-f>": false
+    "<C-f>": false,
   },
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-    {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.focusLeftGroup"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [";"],
-      "after": [":"]
-    },
-    {
-        "before": ["Z", "Z"],
-        "commands": [
-            ":wq"
-        ]
-    },
-    {
-      "before": ["<space>"],
-      "commands": [
-        "python.datascience.execSelectionInteractive", 
-        "cursorDown"
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
       ]
     },
     {
-      "before": ["_"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["-"],
-      "commands": ["editor.action.moveLinesDownAction"]
-    },
-    {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-    {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.focusLeftGroup"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<space>"],
+      "before": [
+        "_"
+      ],
       "commands": [
-        "python.datascience.execSelectionInteractive", 
-        "extension.vim_escape"
+        "editor.action.moveLinesUpAction"
       ]
-    }
+    },
+    {
+      "before": [
+        "-"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
+    },
   ],
-  "python.terminal.activateEnvironment": false,
-  "terminal.integrated.rendererType": "canvas",
-  "python.dataScience.sendSelectionToInteractiveWindow": true,
-  "workbench.colorTheme": "Monokai",
-  "terminal.integrated.commandsToSkipShell": [],
-  "window.zoomLevel": 0,
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen"
+  ], // ctrl+p
   "window.enableMenuBarMnemonics": false,
-  "python.dataScience.askForKernelRestart": false,
   "editor.suggestSelection": "first",
   //"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.jediEnabled": false,
-  "workbench.iconTheme": "ayu",
-  "kite.showWelcomeNotificationOnStartup": false,
   "workbench.activityBar.visible": true,
   "editor.minimap.enabled": false,
-  "code-runner.executorMap": {
-    "python": "$pythonPath -u $fullFileName",
-  },
-  "code-runner.showExecutionMessage": false,
-  "code-runner.clearPreviousOutput": true,
-  "python.envFile": "${workspaceFolder}/dev.env",
-  "docker.host": "tcp://localhost:23750",
   "git.confirmSync": false,
-  "python.linting.flake8Args": [
-    "--max-line-length=88"
-  ],
-  "[css]": {
-    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
-  },
-  "liveServer.settings.donotShowInfoMsg": true,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
   "editor.rulers": [
-    { "column": 80, "color": "#333333" },
-    { "column": 88, "color": "#333333" }
-  ]
+    {
+      "column": 80,
+      "color": "#333333"
+    },
+    {
+      "column": 120,
+      "color": "#333333"
+    }
+  ],
+  "python.showStartPage": false,
+  "python.languageServer": "Pylance",
+  "jupyter.askForKernelRestart": false,
+  "python.terminal.activateEnvironment": false,
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.linting.flake8Args": [
+    "--max-line-length=120"
+  ],
+  "python.linting.pylintArgs": [
+    "--disable=F0401"
+  ], // import folder.file error
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false,
+  "autoDocstring.docstringFormat": "docblockr",
+  "r.alwaysUseActiveTerminal": true,
+  "r.rterm.linux": "/usr/local/bin/radian",
+  "[r]": {
+    "editor.defaultFormatter": "REditorSupport.r"
+  },
+  "r.bracketedPaste": true,
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "git.ignoreMissingGitWarning": true,
+  "bracketPairColorizer.depreciation-notice": false,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "120"],
+  "python.linting.enabled": true,
+  "redhat.telemetry.enabled": false,
+  "notebook.lineNumbers": "on",
+  "notebook.consolidatedRunButton": true,
+  "workbench.colorTheme": "Darcula Theme from IntelliJ",
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "files.autoSave": "afterDelay",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "terminal.integrated.inheritEnv": false,
 }
