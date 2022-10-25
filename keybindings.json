@@ -1,0 +1,49 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "space",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "jupyter.execSelectionInteractive",
+                "cursorDown",
+            ]
+        },
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && editorLangId == 'python'"
+    },
+    {
+        "key": "space",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "jupyter.execSelectionInteractive",
+                "extension.vim_escape",
+                "cursorDown",
+            ]
+        },
+        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine' && editorLangId == 'python'"
+    },
+    {
+        "key": "space",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "r.runSelection",
+            ]
+        },
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && editorLangId == 'r'"
+    },
+    {
+        "key": "space",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "r.runSelection",
+                "extension.vim_escape",
+                "cursorDown",
+            ]
+        },
+        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine' && editorLangId == 'r'"
+    }
+
+]
