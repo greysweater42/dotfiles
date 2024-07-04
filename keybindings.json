@@ -21,29 +21,34 @@
                 "cursorDown",
             ]
         },
-        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine' && editorLangId == 'python'"
+        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine') && editorLangId == 'python'"
     },
     {
         "key": "space",
         "command": "extension.multiCommand.execute",
         "args": {
             "sequence": [
-                "r.runSelection",
+                "snowflake.executeStatements",
+                "cursorDown",
             ]
         },
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && editorLangId == 'r'"
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && editorLangId == 'snowflake-sql'"
     },
     {
         "key": "space",
         "command": "extension.multiCommand.execute",
         "args": {
             "sequence": [
-                "r.runSelection",
+                "snowflake.executeStatements",
                 "extension.vim_escape",
                 "cursorDown",
             ]
         },
-        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine' && editorLangId == 'r'"
-    }
-
+        "when": "editorTextFocus && vim.active && (vim.mode == 'Visual' || vim.mode == 'VisualLine') && editorLangId == 'snowflake-sql'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
 ]

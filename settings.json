@@ -54,9 +54,6 @@
   ], // ctrl+p
   "window.enableMenuBarMnemonics": false,
   "editor.suggestSelection": "first",
-  //"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.activityBar.visible": true,
-  "editor.minimap.enabled": false,
   "git.confirmSync": false,
   "editor.rulers": [
     {
@@ -111,7 +108,6 @@
   "redhat.telemetry.enabled": false,
   "notebook.lineNumbers": "on",
   "notebook.consolidatedRunButton": true,
-  "workbench.colorTheme": "Darcula Theme from IntelliJ",
   "workbench.iconTheme": "material-icon-theme",
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.enabled": false,
@@ -120,4 +116,13 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "terminal.integrated.inheritEnv": false,
+  "editor.fontSize": 14.7,
+  "editor.fontWeight": "500",
+  "window.zoomLevel": 1,
+  "snowflake.snowsqlConfigPath": "~/.snowsql/config",
+  "snowflake.showExecuteAboveStatement.enabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "git.openRepositoryInParentFolders": "never",
 }
